@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "legend_chasers_remake:block/foundry" },
+    "facing=east":  { "model": "legend_chasers_remake:block/foundry", "y": 90 },
+    "facing=south": { "model": "legend_chasers_remake:block/foundry", "y": 180 },
+    "facing=west":  { "model": "legend_chasers_remake:block/foundry", "y": 270 }
+  }
+}

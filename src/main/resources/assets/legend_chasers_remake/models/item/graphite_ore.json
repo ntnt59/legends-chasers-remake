@@ -1,0 +1,6 @@
+{
+  "parent": "legend_chasers_remake:block/graphite_ore",
+  "textures": {
+    "layer0": "legend_chasers_remake:item/graphite_ore"
+  }
+}

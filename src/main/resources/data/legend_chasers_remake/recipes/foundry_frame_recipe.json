@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "   ",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "legend_chasers_remake:graphite"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:foundry_casing",
+    "count": 1
+  }
+}

@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Not specified"
+
+[[mods]]
+logoFile= "legends_chasers_remake.png"
+modId="legend_chasers_remake"
+version="26.0.0-ALPHA"
+displayName="Legend Chasers Remake"
+displayURL="https://discord.gg/VsT8QGZECq"
+credits="Thanks to Aeillouxe for contributing!"
+authors="Nathan"
+
+ #---------------------------------------------------------
+
+[[dependencies.legend_chasers_remake]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+

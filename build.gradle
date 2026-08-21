@@ -1,0 +1,72 @@
+plugins {
+    id 'eclipse'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.141'
+}
+
+version = '1.0'
+base.archivesName = "legend_chasers_remake"
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+// Indique à Gradle d'inclure les ressources générées par le Datagen dans le build
+sourceSets.main.resources.srcDir 'src/generated/resources'
+
+legacyForge {
+    version = "1.20.1-47.4.20"
+
+    runs {
+        client {
+            client()
+            // Code supprimé : la lecture des variables JVM MCreator n'est plus nécessaire
+        }
+
+        server {
+            server()
+        }
+
+        // Run Datagen
+        data {
+            data()
+            programArguments.addAll '--mod', 'legend_chasers_remake', '--all',
+                    '--output', file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', file('src/main/resources/').getAbsolutePath()
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        // Remplacé "mcreator" par l'ID de votre mod
+        legend_chasers_remake {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+mixin {
+    if (file("src/main/resources/legend_chasers_remake.mixins.json").exists()) {
+        add sourceSets.main, "legend_chasers_remake.refmap.json"
+        config "legend_chasers_remake.mixins.json"
+    }
+}
+
+dependencies {
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0"))
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+jar {
+    if (file("src/main/resources/legend_chasers_remake.mixins.json").exists()) {
+        manifest.attributes([
+                "MixinConfigs": "legend_chasers_remake.mixins.json"
+        ])
+    }
+}

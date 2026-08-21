@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "bbb",
+    "bab",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:blast_furnace"
+    },
+    "b": {
+      "item": "legend_chasers_remake:graphite"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:foundry",
+    "count": 1
+  }
+}

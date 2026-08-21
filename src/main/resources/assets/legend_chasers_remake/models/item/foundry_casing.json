@@ -1,0 +1,6 @@
+{
+  "parent": "legend_chasers_remake:block/foundry_casing",
+  "textures": {
+    "layer0": "legend_chasers_remake:item/foundry_casing"
+  }
+}

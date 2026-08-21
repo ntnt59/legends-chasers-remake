@@ -1,0 +1,11 @@
+{
+  "type": "legend_chasers_remake:mining_dimension",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:desert"
+    }
+  }
+}

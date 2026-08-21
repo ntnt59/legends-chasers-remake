@@ -1,0 +1,6 @@
+{
+  "parent": "legend_chasers_remake:block/iron_frame",
+  "textures": {
+    "layer0": "legend_chasers_remake:item/iron_frame"
+  }
+}
