@@ -66,4 +66,13 @@ public class LegendChasersRemakeModBlocks {
                             .requiresCorrectToolForDrops()
 
             ));
+    public static final RegistryObject<Block> BLUE_MYSTERIOUS_BRICKS =
+            BLOCKS.register("blue_mysterious_bricks", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
 }

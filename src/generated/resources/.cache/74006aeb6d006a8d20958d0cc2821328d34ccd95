@@ -1,0 +1,4 @@
+// 1.20.1	2026-08-21T15:59:06.2177801	Tags for minecraft:block mod id legend_chasers_remake
+d0efe9e6fa7835b0f55ab58a305317a350de1ef7 data/minecraft/tags/blocks/mineable/pickaxe.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_iron_tool.json
+e407dc69fd0ec23cd3936f74c16339c6b3c6df36 data/minecraft/tags/blocks/needs_stone_tool.json
