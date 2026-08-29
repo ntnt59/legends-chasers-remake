@@ -24,6 +24,8 @@ public class DataGenerators {
         // 1. Modèles & Blockstates (Client)
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
 
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+
         // 2. Loot Tables / Drops (Server)
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 

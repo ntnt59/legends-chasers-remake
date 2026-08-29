@@ -1,6 +1,7 @@
 package net.tototuto.legendchasersremake.init;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -75,4 +76,32 @@ public class LegendChasersRemakeModBlocks {
                             .requiresCorrectToolForDrops()
 
             ));
+    public static final RegistryObject<Block> AQUAMARINE_BLOCK =
+            BLOCKS.register("aquamarine_block", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_LIGHT_BLUE)
+                            .strength(1.5f, 1.5f)
+                            .sound(SoundType.AMETHYST)
+                            .requiresCorrectToolForDrops()
+            ));
+    public static final RegistryObject<Block> ABYSSAL_NYLIUM_BLOCK =
+            BLOCKS.register("abyssal_nylium_block", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.TERRACOTTA_WHITE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+            ));
+    public static final RegistryObject<Block> PROTIUM_LEAVES =
+            BLOCKS.register("protium_leaves", () -> new LeavesBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_CYAN)
+                            .strength(0.6f, 0.6f)
+                            .randomTicks()
+                            .sound(SoundType.AZALEA_LEAVES)
+                            .noOcclusion()
+                            .isViewBlocking((state, level, pos) -> false)
+                            .isSuffocating((state, level, pos) -> false)
+            ));
+    // to add in BlockStateProvider : simpleBlock(PROTIUM_LEAVES.get());
+    // to add in BlockStateProvider : simpleBlock(ABYSSAL_NYLIUM_BLOCK.get());
 }

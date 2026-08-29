@@ -25,7 +25,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         LegendChasersRemakeModBlocks.FOUNDRY_CASING.get(),
                         LegendChasersRemakeModBlocks.FOUNDRY.get(),
                         LegendChasersRemakeModBlocks.PRISS_STONE.get(),
-                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get());
+                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get(),
+                        LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK.get(),
+                        LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get());
 
         // Définir le niveau de minerai requis
 

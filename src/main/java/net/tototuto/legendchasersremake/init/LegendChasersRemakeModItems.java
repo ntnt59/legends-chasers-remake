@@ -11,6 +11,8 @@ import net.minecraft.world.item.BlockItem; // <-- Import nécessaire pour le blo
 import net.tototuto.legendchasersremake.item.ElectricSwordItem;
 
 public class LegendChasersRemakeModItems {
+	public static final String ModClass = "LegendChasersRemakeModBlocks";
+	
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, LegendChasersRemakeMod.MODID);
 
 	public static final RegistryObject<Item> ELECTRIC_SWORD;
@@ -21,6 +23,11 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> FOUNDRY;
 	public static final RegistryObject<Item> PRISS_STONE;
 	public static final RegistryObject<Item> PRISS_COBBLESTONE;
+	public static final RegistryObject<Item> AQUAMARINE_BLOCK;
+	public static final RegistryObject<Item> BLUE_MYSTERIOUS_BRICKS;
+	public static final RegistryObject<Item> AQUAMARINE;
+	public static final RegistryObject<Item> ABYSSAL_NYLIUM_BLOCK;
+	public static final RegistryObject<Item> PROTIUM_LEAVES;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -56,5 +63,27 @@ public class LegendChasersRemakeModItems {
 				LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get(),
 				new Item.Properties()
 		));
+		AQUAMARINE_BLOCK = REGISTRY.register("aquamarine_block", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK.get(),
+				new Item.Properties()
+		));
+		BLUE_MYSTERIOUS_BRICKS = REGISTRY.register("blue_mysterious_bricks", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.BLUE_MYSTERIOUS_BRICKS.get(),
+				new Item.Properties()
+		));
+		AQUAMARINE = REGISTRY.register("aquamarine", () -> new Item(
+				new Item.Properties()
+						.stacksTo(64)
+		));
+		ABYSSAL_NYLIUM_BLOCK = REGISTRY.register("abyssal_nylium_block", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
+						new Item.Properties()
+								.stacksTo(64)
+				));
+		PROTIUM_LEAVES = REGISTRY.register("protium_leaves", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get(),
+						new Item.Properties()
+								.stacksTo(64)
+				));
 	}
 }

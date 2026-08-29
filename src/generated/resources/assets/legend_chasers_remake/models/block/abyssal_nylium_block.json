@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "legend_chasers_remake:block/priss_stone",
+    "east": "legend_chasers_remake:block/abyssal_nylium_block_side",
+    "north": "legend_chasers_remake:block/abyssal_nylium_block_side",
+    "particle": "legend_chasers_remake:block/abyssal_nylium_block_side",
+    "south": "legend_chasers_remake:block/abyssal_nylium_block_side",
+    "up": "legend_chasers_remake:block/abyssal_nylium_block_top",
+    "west": "legend_chasers_remake:block/abyssal_nylium_block_side"
+  }
+}

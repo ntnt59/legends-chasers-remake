@@ -44,11 +44,13 @@ public class LegendChasersRemakeModTabs {
 
 	public static final RegistryObject<CreativeModeTab> LCR_NATURAL_BLOCKS = REGISTRY.register("lcr_natural_blocks",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.legend_chasers_remake.lcr_natural_blocks"))
-					.icon(() -> new ItemStack(LegendChasersRemakeModItems.PRISS_STONE.get()))
+					.icon(() -> new ItemStack(LegendChasersRemakeModItems.ABYSSAL_NYLIUM_BLOCK.get()))
 					.displayItems((parameters, tabData) -> {
 								tabData.accept(LegendChasersRemakeModItems.GRAPHITE_ORE.get());
+						tabData.accept(LegendChasersRemakeModItems.ABYSSAL_NYLIUM_BLOCK.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get());
+								tabData.accept(LegendChasersRemakeModItems.AQUAMARINE_BLOCK.get());
 							}
 					)
 					.build());
@@ -58,6 +60,7 @@ public class LegendChasersRemakeModTabs {
 					.icon(() -> new ItemStack(LegendChasersRemakeModItems.GRAPHITE.get()))
 					.displayItems((parameters, tabData) -> {
 								tabData.accept(LegendChasersRemakeModItems.GRAPHITE.get());
+						        tabData.accept(LegendChasersRemakeModItems.AQUAMARINE.get());
 							}
 					)
 					.build());

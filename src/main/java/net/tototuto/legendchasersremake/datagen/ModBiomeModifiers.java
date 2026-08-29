@@ -26,8 +26,9 @@ public class ModBiomeModifiers {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_GRAPHITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_OVERWORLD), // Ajoute le minerai dans tous les biomes de l'Overworld
-                HolderSet.direct(placedFeatures.getOrThrow(ModWorldGenProvider.GRAPHITE_ORE_PLACED)),
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                // Modification ici : appel via ModPlacedFeatures au lieu de ModWorldGenProvider
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GRAPHITE_ORE_PLACED)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
     }

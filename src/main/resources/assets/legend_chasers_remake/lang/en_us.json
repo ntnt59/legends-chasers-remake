@@ -10,5 +10,7 @@
   "block.legend_chasers_remake.foundry_casing": "Foundry Casing",
   "block.legend_chasers_remake.foundry": "Foundry",
   "block.legend_chasers_remake.priss_stone": "Priss Stone",
-  "block.legend_chasers_remake.priss_cobblestone": "Priss Cobblestone"
+  "block.legend_chasers_remake.priss_cobblestone": "Priss Cobblestone",
+  "block.legend_chasers_remake.aquamarine_block": "Aquamarine Block",
+  "item.legend_chasers_remake.aquamarine" : "Aquamarine"
 }

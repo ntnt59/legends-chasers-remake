@@ -18,9 +18,24 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE);
         blockWithItem(LegendChasersRemakeModBlocks.PRISS_STONE);
+        blockWithItem(LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK);
+
+        String name = LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.getId().getPath();
+        simpleBlockWithItem(
+                LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
+                models().cube(
+                        name,
+                        modLoc("block/priss_stone"),
+                        modLoc("block/" + name + "_top"),
+                        modLoc("block/" + name + "_side"),
+                        modLoc("block/" + name + "_side"),
+                        modLoc("block/" + name + "_side"),
+                        modLoc("block/" + name + "_side")
+                ).texture("particle", modLoc("block/" + name + "_side"))
+        );
+        blockWithItem(LegendChasersRemakeModBlocks.PROTIUM_LEAVES);
     }
 
-    // Helper qui crée en 1 ligne : Blockstate + Modèle 3D + Modèle de l'Item d'inventaire
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
