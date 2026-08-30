@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "legend_chasers_remake:item/electric_sword"
+  }
+}

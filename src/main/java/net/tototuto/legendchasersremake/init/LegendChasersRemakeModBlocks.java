@@ -10,6 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tototuto.legendchasersremake.block.FoundryBlock;
 import net.tototuto.legendchasersremake.block.GraphiteOre;
+import net.tototuto.legendchasersremake.block.PrissGrass;
 
 public class LegendChasersRemakeModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -90,6 +91,7 @@ public class LegendChasersRemakeModBlocks {
                             .mapColor(MapColor.TERRACOTTA_WHITE)
                             .strength(1.5f, 6.0f)
                             .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
             ));
     public static final RegistryObject<Block> PROTIUM_LEAVES =
             BLOCKS.register("protium_leaves", () -> new LeavesBlock(
@@ -102,6 +104,17 @@ public class LegendChasersRemakeModBlocks {
                             .isViewBlocking((state, level, pos) -> false)
                             .isSuffocating((state, level, pos) -> false)
             ));
+    
+    public static final RegistryObject<Block> PRISS_GRASS =
+            BLOCKS.register("priss_grass", () -> new PrissGrass(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+            ));
+    // to add in BlockStateProvider : simpleBlock(PRISS_GRASS.get());
     // to add in BlockStateProvider : simpleBlock(PROTIUM_LEAVES.get());
     // to add in BlockStateProvider : simpleBlock(ABYSSAL_NYLIUM_BLOCK.get());
 }

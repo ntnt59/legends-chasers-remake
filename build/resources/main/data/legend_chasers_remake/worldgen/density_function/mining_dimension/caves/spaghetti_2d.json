@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:noise",
+  "noise": "minecraft:spaghetti_2d_elevation",
+  "xz_scale": 1.5,
+  "y_scale": 0
+}

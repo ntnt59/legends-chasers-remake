@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "   ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:iron_frame",
+    "count": 4
+  }
+}

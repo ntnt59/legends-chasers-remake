@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "legend_chasers_remake:block/foundry",
+    "down": "legend_chasers_remake:block/iron_frame",
+    "up": "legend_chasers_remake:block/iron_frame",
+    "north": "legend_chasers_remake:block/foundry",
+    "south": "legend_chasers_remake:block/foundry_casing",
+    "east": "legend_chasers_remake:block/iron_frame",
+    "west": "legend_chasers_remake:block/iron_frame"
+  }
+}

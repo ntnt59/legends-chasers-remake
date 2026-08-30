@@ -49,6 +49,8 @@ public class ModLootTableProvider {
                     block -> createSingleItemTableWithSilkTouch(block, LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get()));
             this.add(LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get(),
                     block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
+            this.add(LegendChasersRemakeModBlocks.PRISS_GRASS.get(),
+                    block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
 
             // 2. Minerai classique : Silk Touch donne le bloc, sinon drop un Item avec Fortune
             // Remplace "Items.RAW_IRON" par ton propre item (ex: LegendChasersRemakeModItems.GRAPHITE.get())

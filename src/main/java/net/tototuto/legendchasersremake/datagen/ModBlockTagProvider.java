@@ -1,5 +1,6 @@
 package net.tototuto.legendchasersremake.datagen;
 
+import net.tototuto.legendchasersremake.init.LCRBlockTags;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -40,6 +41,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         LegendChasersRemakeModBlocks.FOUNDRY_CASING.get(),
                         LegendChasersRemakeModBlocks.FOUNDRY.get());
 
+        this.tag(LCRBlockTags.Blocks.IS_LCR_PLANTABLE)
+                .add(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get());
         /*
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add();

@@ -51,6 +51,7 @@ public class LegendChasersRemakeModTabs {
 								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get());
 								tabData.accept(LegendChasersRemakeModItems.AQUAMARINE_BLOCK.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_GRASS.get());
 							}
 					)
 					.build());

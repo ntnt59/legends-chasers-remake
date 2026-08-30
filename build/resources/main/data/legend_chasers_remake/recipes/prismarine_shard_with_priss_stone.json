@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " ab",
+    " ba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:sugar"
+    },
+    "b": {
+      "item": "legend_chasers_remake:priss_stone"
+    }
+  },
+  "result": {
+    "item": "minecraft:prismarine_shard",
+    "count": 8
+  }
+}

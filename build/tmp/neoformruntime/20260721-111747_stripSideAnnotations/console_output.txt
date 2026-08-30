@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - C:\Users\couts\.jdks\temurin-21.0.11\bin\java.exe
+ - -jar
+ - C:\Users\couts\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mergetool\1.1.7\3d41564f78f123d64573cae7948014baf3aaba3f\mergetool-1.1.7-fatjar.jar
+ - --strip
+ - --input
+ - C:\Users\couts\.gradle\caches\neoformruntime\intermediate_results\rename_d61d2f80b19a255d867b8b3b0318266dc3173ed6_output.jar
+ - --output
+ - ./output.jar
+ - --data
+ - sas\forge.sas
+--------------------------------------------------------------------------------
+
+Input:  C:\Users\couts\.gradle\caches\neoformruntime\intermediate_results\rename_d61d2f80b19a255d867b8b3b0318266dc3173ed6_output.jar
+Output: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\tmp\neoformruntime\20260721-111747_stripSideAnnotations\.\output.jar
+Data:   C:\Users\couts\Downloads\Legend_Chasers_Remake\build\tmp\neoformruntime\20260721-111747_stripSideAnnotations\sas\forge.sas

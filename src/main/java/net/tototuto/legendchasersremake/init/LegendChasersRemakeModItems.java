@@ -28,6 +28,7 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> AQUAMARINE;
 	public static final RegistryObject<Item> ABYSSAL_NYLIUM_BLOCK;
 	public static final RegistryObject<Item> PROTIUM_LEAVES;
+	public static final RegistryObject<Item> PRISS_GRASS;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -73,17 +74,18 @@ public class LegendChasersRemakeModItems {
 		));
 		AQUAMARINE = REGISTRY.register("aquamarine", () -> new Item(
 				new Item.Properties()
-						.stacksTo(64)
 		));
 		ABYSSAL_NYLIUM_BLOCK = REGISTRY.register("abyssal_nylium_block", () -> new BlockItem(
 		                LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
 						new Item.Properties()
-								.stacksTo(64)
-				));
+		));
 		PROTIUM_LEAVES = REGISTRY.register("protium_leaves", () -> new BlockItem(
 		                LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get(),
 						new Item.Properties()
-								.stacksTo(64)
-				));
+		));
+		PRISS_GRASS = REGISTRY.register("priss_grass", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.PRISS_GRASS.get(),
+						new Item.Properties()
+		));
 	}
 }

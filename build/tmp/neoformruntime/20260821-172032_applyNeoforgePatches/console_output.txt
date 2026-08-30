@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+
+Command-Line:
+ - C:\Users\couts\.jdks\temurin-21.0.11\bin\java.exe
+ - -jar
+ - C:\Users\couts\.gradle\caches\modules-2\files-2.1\io.codechicken\DiffPatch\2.0.0.36\5b32f9baa0c0371c0dc80a3b88794960af0c6b44\DiffPatch-2.0.0.36-all.jar
+ - C:\Users\couts\.gradle\caches\neoformruntime\intermediate_results\patch_cbd6737178a02d62f7f8d7c417f509655f14b50a_output.zip
+ - C:\Users\couts\.gradle\caches\modules-2\resources-2.1\52\e05423c58e254b84b79cfe452d61c72e71e7fa89\forge-1.20.1-47.4.20-userdev.jar
+ - --prefix
+ - patches/
+ - --patch
+ - --archive
+ - ZIP
+ - --output
+ - ./output.zip
+ - --log-level
+ - WARN
+ - --mode
+ - OFFSET
+ - --archive-rejects
+ - ZIP
+ - --reject
+ - ./outputRejects.zip
+ - --base-path-prefix
+ - a/
+ - --modified-path-prefix
+ - b/
+--------------------------------------------------------------------------------
+

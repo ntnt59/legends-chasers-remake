@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:add",
+  "argument1": 0.05,
+  "argument2": {
+    "type": "minecraft:mul",
+    "argument1": {
+      "type": "minecraft:cache_2d",
+      "argument": "legend_chasers_remake:mining_dimension/depth"
+    },
+    "argument2": {
+      "type": "minecraft:noise",
+      "noise": "legend_chasers_remake:mining_amplified",
+      "xz_scale": 0.5,
+      "y_scale": 0.5
+    }
+  }
+}
