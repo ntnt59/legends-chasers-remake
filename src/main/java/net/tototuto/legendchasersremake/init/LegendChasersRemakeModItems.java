@@ -29,6 +29,10 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> ABYSSAL_NYLIUM_BLOCK;
 	public static final RegistryObject<Item> PROTIUM_LEAVES;
 	public static final RegistryObject<Item> PRISS_GRASS;
+	public static final RegistryObject<Item> BLUE_PRISS_GRASS;
+	public static final RegistryObject<Item> PINK_PRISS_GRASS;
+	public static final RegistryObject<Item> GREEN_PRISS_GRASS;
+	public static final RegistryObject<Item> PURPLE_PRISS_GRASS;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -86,6 +90,22 @@ public class LegendChasersRemakeModItems {
 		PRISS_GRASS = REGISTRY.register("priss_grass", () -> new BlockItem(
 		                LegendChasersRemakeModBlocks.PRISS_GRASS.get(),
 						new Item.Properties()
+		));
+		BLUE_PRISS_GRASS = REGISTRY.register("blue_priss_grass", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.BLUE_PRISS_GRASS.get(),
+						new Item.Properties()
+				));
+		PURPLE_PRISS_GRASS = REGISTRY.register("purple_priss_grass", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PURPLE_PRISS_GRASS.get(),
+				new Item.Properties()
+		));
+		PINK_PRISS_GRASS = REGISTRY.register("pink_priss_grass", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.get(),
+				new Item.Properties()
+		));
+		GREEN_PRISS_GRASS = REGISTRY.register("green_priss_grass", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.GREEN_PRISS_GRASS.get(),
+				new Item.Properties()
 		));
 	}
 }

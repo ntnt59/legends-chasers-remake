@@ -6,7 +6,7 @@
       "type": "minecraft:multi_noise",
       "biomes": [
         {
-          "biome": "minecraft:plains",
+          "biome": "legend_chasers_remake:prissaz_plain",
           "parameters": {
             "continentalness": 0.0,
             "depth": 0.0,

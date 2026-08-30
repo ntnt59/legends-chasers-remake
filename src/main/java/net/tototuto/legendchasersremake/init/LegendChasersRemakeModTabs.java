@@ -52,6 +52,12 @@ public class LegendChasersRemakeModTabs {
 								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get());
 								tabData.accept(LegendChasersRemakeModItems.AQUAMARINE_BLOCK.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_GRASS.get());
+								tabData.accept(LegendChasersRemakeModItems.GREEN_PRISS_GRASS.get());
+								tabData.accept(LegendChasersRemakeModItems.BLUE_PRISS_GRASS.get());
+								tabData.accept(LegendChasersRemakeModItems.PURPLE_PRISS_GRASS.get());
+								tabData.accept(LegendChasersRemakeModItems.PINK_PRISS_GRASS.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_LEAVES.get());
+
 							}
 					)
 					.build());
