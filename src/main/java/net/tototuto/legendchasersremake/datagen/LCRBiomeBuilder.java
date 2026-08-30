@@ -21,8 +21,8 @@ public class LCRBiomeBuilder {
 
     private static Biome createPrissazPlain(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
-                .fogColor(-14035768)       // Couleur du brouillard
-                .skyColor(-14035768)       // Couleur du ciel
+                .fogColor(0x8FA29C)       // Couleur du brouillard
+                .skyColor(0x000080)       // Couleur du ciel
                 .waterColor(-14329397)     // Couleur de l'eau
                 .waterFogColor(-14329397)  // Brouillard sous l'eau
                 .grassColorOverride(-2875) // Herbe

@@ -8,6 +8,7 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.tototuto.legendchasersremake.block.AbyssalNylium;
 import net.tototuto.legendchasersremake.block.FoundryBlock;
 import net.tototuto.legendchasersremake.block.GraphiteOre;
 import net.tototuto.legendchasersremake.block.PrissazGrass;
@@ -86,18 +87,19 @@ public class LegendChasersRemakeModBlocks {
                             .requiresCorrectToolForDrops()
             ));
     public static final RegistryObject<Block> ABYSSAL_NYLIUM_BLOCK =
-            BLOCKS.register("abyssal_nylium_block", () -> new Block(
+            BLOCKS.register("abyssal_nylium_block", () -> new AbyssalNylium(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.TERRACOTTA_WHITE)
                             .strength(1.5f, 6.0f)
+                            .randomTicks()
                             .sound(new SoundType(
                                     1.0f,
                                     1.0f,
                                     SoundType.STONE.getBreakSound(),
-                                    SoundType.STONE.getFallSound(),
-                                    SoundType.STONE.getHitSound(),
+                                    SoundType.NYLIUM.getStepSound(),
                                     SoundType.STONE.getPlaceSound(),
-                                    SoundType.NYLIUM.getStepSound()
+                                    SoundType.STONE.getHitSound(),
+                                    SoundType.STONE.getFallSound()
 
                             ))
                             .requiresCorrectToolForDrops()
@@ -122,6 +124,7 @@ public class LegendChasersRemakeModBlocks {
                             .instabreak()
                             .sound(SoundType.GRASS)
                             .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
             ));
 
     public static final RegistryObject<Block> BLUE_PRISS_GRASS =
@@ -132,6 +135,7 @@ public class LegendChasersRemakeModBlocks {
                             .instabreak()
                             .sound(SoundType.GRASS)
                             .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
             ));
 
         public static final RegistryObject<Block> PURPLE_PRISS_GRASS =
@@ -142,6 +146,7 @@ public class LegendChasersRemakeModBlocks {
                                     .instabreak()
                                     .sound(SoundType.GRASS)
                                     .offsetType(BlockBehaviour.OffsetType.XZ)
+                                    .replaceable()
                     ));
             public static final RegistryObject<Block> GREEN_PRISS_GRASS =
                         BLOCKS.register("green_priss_grass", () -> new PrissazGrass(
@@ -151,6 +156,7 @@ public class LegendChasersRemakeModBlocks {
                                         .instabreak()
                                         .sound(SoundType.GRASS)
                                         .offsetType(BlockBehaviour.OffsetType.XZ)
+                                        .replaceable()
                         ));
                 public static final RegistryObject<Block> PINK_PRISS_GRASS =
                             BLOCKS.register("pink_priss_grass", () -> new PrissazGrass(
@@ -160,9 +166,6 @@ public class LegendChasersRemakeModBlocks {
                                             .instabreak()
                                             .sound(SoundType.GRASS)
                                             .offsetType(BlockBehaviour.OffsetType.XZ)
+                                            .replaceable()
                             ));
-    // to add in BlockStateProvider : simpleBlock(BLUE_PRISS_GRASS.get());
-    // to add in BlockStateProvider : simpleBlock(PRISS_GRASS.get());
-    // to add in BlockStateProvider : simpleBlock(PROTIUM_LEAVES.get());
-    // to add in BlockStateProvider : simpleBlock(ABYSSAL_NYLIUM_BLOCK.get());
 }

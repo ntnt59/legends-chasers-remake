@@ -22,17 +22,21 @@ public class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         // 1. Modèles & Blockstates (Client)
-        generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(),
+                new ModBlockStateProvider(packOutput, existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(),
+                new ModItemModelProvider(packOutput, existingFileHelper));
 
         // 2. Loot Tables / Drops (Server)
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 
         // 3. Block Tags (Server)
-        generator.addProvider(event.includeServer(), new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(),
+                new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         // 4. Worldgen (Server)
-        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(),
+                new ModWorldGenProvider(packOutput, lookupProvider));
     }
 }

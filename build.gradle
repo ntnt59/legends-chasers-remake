@@ -51,10 +51,8 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 mixin {
-    if (file("src/main/resources/legend_chasers_remake.mixins.json").exists()) {
-        add sourceSets.main, "legend_chasers_remake.refmap.json"
-        config "legend_chasers_remake.mixins.json"
-    }
+    add sourceSets.main, "mixins.legend_chasers_remake.refmap.json"
+    config "mixins.legend_chasers_remake.json"
 }
 
 dependencies {

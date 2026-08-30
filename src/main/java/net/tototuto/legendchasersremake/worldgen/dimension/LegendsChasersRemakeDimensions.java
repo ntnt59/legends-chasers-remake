@@ -53,7 +53,7 @@ public class LegendsChasersRemakeDimensions {
                 256,
                 BlockTags.INFINIBURN_OVERWORLD,
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS,
-                0.0f,
+                1.0f,
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)
         ));
     }

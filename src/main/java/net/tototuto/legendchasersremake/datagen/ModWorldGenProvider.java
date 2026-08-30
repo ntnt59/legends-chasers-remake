@@ -7,7 +7,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.tototuto.legendchasersremake.LegendChasersRemakeMod;
-import net.tototuto.legendchasersremake.datagen.LCRBiomeBuilder;
 import net.tototuto.legendchasersremake.worldgen.dimension.LegendsChasersRemakeDimensions;
 
 import java.util.Set;
