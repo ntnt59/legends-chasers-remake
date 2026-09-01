@@ -2,6 +2,8 @@ package net.tototuto.legendchasersremake.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.BaseCoralPlantTypeBlock;
+import net.minecraft.world.level.block.CoralBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
@@ -17,10 +19,11 @@ public class AbyssalNylium extends Block {
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockPos abovePos = pos.above();
         BlockState aboveState = level.getBlockState(abovePos);
+        Block aboveBlock = aboveState.getBlock();
 
         boolean hasObstacleAbove = !aboveState.isAir() && !aboveState.canBeReplaced();
 
-        if (hasObstacleAbove) {
+        if (hasObstacleAbove && !(aboveBlock instanceof CoralBlock) && !(aboveBlock instanceof BaseCoralPlantTypeBlock)) {
             level.setBlockAndUpdate(pos, LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState());
         }
     }

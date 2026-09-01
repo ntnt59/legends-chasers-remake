@@ -44,6 +44,9 @@ public class ModLootTableProvider {
             this.dropSelf(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK.get());
             this.dropSelf(LegendChasersRemakeModBlocks.BLUE_MYSTERIOUS_BRICKS.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PARAPHYTE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.FLOROPHYTE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.BUBBLEPHYTE.get());
 
             this.add(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
                     block -> createSingleItemTableWithSilkTouch(block, LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get()));
@@ -58,6 +61,10 @@ public class ModLootTableProvider {
             this.add(LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.get(),
                     block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
             this.add(LegendChasersRemakeModBlocks.GREEN_PRISS_GRASS.get(),
+                    block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
+            this.add(LegendChasersRemakeModBlocks.TALL_PRISS_GRASS.get(),
+                    block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
+            this.add(LegendChasersRemakeModBlocks.TALL_RAINBOW_PRISS_GRASS.get(),
                     block -> createSingleItemTableWithSilkTouch(block, Items.AIR));
 
             // 2. Minerai classique : Silk Touch donne le bloc, sinon drop un Item avec Fortune

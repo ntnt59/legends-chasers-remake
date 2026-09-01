@@ -1,5 +1,6 @@
 package net.tototuto.legendchasersremake;
 
+import net.tototuto.legendchasersremake.init.LCRFeatures;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModBlocks;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModItems;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModTabs;
@@ -46,6 +47,7 @@ public class LegendChasersRemakeMod {
 		LegendChasersRemakeModItems.REGISTRY.register(bus);
 		LegendChasersRemakeModTabs.REGISTRY.register(bus);
 		LegendChasersRemakeModBlocks.BLOCKS.register(bus);
+		LCRFeatures.FEATURES.register(bus);
 	}
 
 	// --- Réseaux & Tâches ---

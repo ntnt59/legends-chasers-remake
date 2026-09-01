@@ -5,13 +5,11 @@ import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.tototuto.legendchasersremake.block.AbyssalNylium;
-import net.tototuto.legendchasersremake.block.FoundryBlock;
-import net.tototuto.legendchasersremake.block.GraphiteOre;
-import net.tototuto.legendchasersremake.block.PrissazGrass;
+import net.tototuto.legendchasersremake.block.*;
 
 public class LegendChasersRemakeModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -117,7 +115,7 @@ public class LegendChasersRemakeModBlocks {
             ));
     
     public static final RegistryObject<Block> PRISS_GRASS =
-            BLOCKS.register("priss_grass", () -> new PrissazGrass(
+            BLOCKS.register("priss_grass", () -> new PrissazPlantBlock(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.PLANT)
                             .noCollission()
@@ -126,9 +124,31 @@ public class LegendChasersRemakeModBlocks {
                             .offsetType(BlockBehaviour.OffsetType.XZ)
                             .replaceable()
             ));
+    public static final RegistryObject<Block> TALL_PRISS_GRASS =
+            BLOCKS.register("tall_priss_grass", () -> new DoublePrissazPlantBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
+                            .pushReaction(PushReaction.DESTROY)
+            ));
+    public static final RegistryObject<Block> TALL_RAINBOW_PRISS_GRASS =
+            BLOCKS.register("tall_rainbow_priss_grass", () -> new DoublePrissazPlantBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
+                            .pushReaction(PushReaction.DESTROY)
+            ));
 
     public static final RegistryObject<Block> BLUE_PRISS_GRASS =
-            BLOCKS.register("blue_priss_grass", () -> new PrissazGrass(
+            BLOCKS.register("blue_priss_grass", () -> new PrissazPlantBlock(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.PLANT)
                             .noCollission()
@@ -139,7 +159,7 @@ public class LegendChasersRemakeModBlocks {
             ));
 
         public static final RegistryObject<Block> PURPLE_PRISS_GRASS =
-                    BLOCKS.register("purple_priss_grass", () -> new PrissazGrass(
+                    BLOCKS.register("purple_priss_grass", () -> new PrissazPlantBlock(
                             BlockBehaviour.Properties.of()
                                     .mapColor(MapColor.PLANT)
                                     .noCollission()
@@ -149,7 +169,7 @@ public class LegendChasersRemakeModBlocks {
                                     .replaceable()
                     ));
             public static final RegistryObject<Block> GREEN_PRISS_GRASS =
-                        BLOCKS.register("green_priss_grass", () -> new PrissazGrass(
+                        BLOCKS.register("green_priss_grass", () -> new PrissazPlantBlock(
                                 BlockBehaviour.Properties.of()
                                         .mapColor(MapColor.PLANT)
                                         .noCollission()
@@ -159,7 +179,7 @@ public class LegendChasersRemakeModBlocks {
                                         .replaceable()
                         ));
                 public static final RegistryObject<Block> PINK_PRISS_GRASS =
-                            BLOCKS.register("pink_priss_grass", () -> new PrissazGrass(
+                            BLOCKS.register("pink_priss_grass", () -> new PrissazPlantBlock(
                                     BlockBehaviour.Properties.of()
                                             .mapColor(MapColor.PLANT)
                                             .noCollission()
@@ -168,4 +188,34 @@ public class LegendChasersRemakeModBlocks {
                                             .offsetType(BlockBehaviour.OffsetType.XZ)
                                             .replaceable()
                             ));
+                    public static final RegistryObject<Block> PARAPHYTE =
+                                BLOCKS.register("paraphyte", () -> new PrissazPlantBlock(
+                                        BlockBehaviour.Properties.of()
+                                                .mapColor(MapColor.PLANT)
+                                                .noCollission()
+                                                .instabreak()
+                                                .sound(SoundType.GRASS)
+                                                .offsetType(BlockBehaviour.OffsetType.XZ)
+                                                .replaceable()
+                                ));
+    public static final RegistryObject<Block> FLOROPHYTE =
+            BLOCKS.register("florophyte", () -> new PrissazPlantBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
+            ));
+    public static final RegistryObject<Block> BUBBLEPHYTE =
+            BLOCKS.register("bubblephyte", () -> new PrissazPlantBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XZ)
+                            .replaceable()
+            ));
 }

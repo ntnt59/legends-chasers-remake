@@ -7,7 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.BlockItem; // <-- Import nécessaire pour le bloc
+import net.minecraft.world.item.BlockItem;
 import net.tototuto.legendchasersremake.item.ElectricSwordItem;
 
 public class LegendChasersRemakeModItems {
@@ -33,6 +33,11 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> PINK_PRISS_GRASS;
 	public static final RegistryObject<Item> GREEN_PRISS_GRASS;
 	public static final RegistryObject<Item> PURPLE_PRISS_GRASS;
+	public static final RegistryObject<Item> PARAPHYTE;
+	public static final RegistryObject<Item> FLOROPHYTE;
+	public static final RegistryObject<Item> BUBBLEPHYTE;
+	public static final RegistryObject<Item> TALL_PRISS_GRASS ;
+	public static final RegistryObject<Item> TALL_RAINBOW_PRISS_GRASS ;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -105,6 +110,26 @@ public class LegendChasersRemakeModItems {
 		));
 		GREEN_PRISS_GRASS = REGISTRY.register("green_priss_grass", () -> new BlockItem(
 				LegendChasersRemakeModBlocks.GREEN_PRISS_GRASS.get(),
+				new Item.Properties()
+		));
+		PARAPHYTE = REGISTRY.register("paraphyte", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.PARAPHYTE.get(),
+						new Item.Properties()
+				));
+		FLOROPHYTE = REGISTRY.register("florophyte", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.FLOROPHYTE.get(),
+				new Item.Properties()
+		));
+		BUBBLEPHYTE = REGISTRY.register("bubblephyte", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.BUBBLEPHYTE.get(),
+				new Item.Properties()
+		));
+		TALL_RAINBOW_PRISS_GRASS = REGISTRY.register("tall_rainbow_priss_grass", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.TALL_RAINBOW_PRISS_GRASS.get(),
+				new Item.Properties()
+		));
+		TALL_PRISS_GRASS = REGISTRY.register("tall_priss_grass", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.TALL_PRISS_GRASS.get(),
 				new Item.Properties()
 		));
 	}

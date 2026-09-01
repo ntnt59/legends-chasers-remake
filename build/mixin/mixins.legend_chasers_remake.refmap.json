@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "net/tototuto/legendchasersremake/mixin/CoralBlockMixin": {
+      "scanForWater": "Lnet/minecraft/world/level/block/CoralBlock;m_52134_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+    },
+    "net/tototuto/legendchasersremake/mixin/BaseCoralPlantTypeBlockMixin": {
+      "scanForWater": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49186_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+    }
+  },
+  "data": {
+    "searge": {
+      "net/tototuto/legendchasersremake/mixin/CoralBlockMixin": {
+        "scanForWater": "Lnet/minecraft/world/level/block/CoralBlock;m_52134_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+      },
+      "net/tototuto/legendchasersremake/mixin/BaseCoralPlantTypeBlockMixin": {
+        "scanForWater": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49186_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+      }
+    }
+  }
+}

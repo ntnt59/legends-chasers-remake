@@ -37,6 +37,25 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_GREEN_PRISS_GRASS = ResourceKey.create(
             ForgeRegistries.Keys.BIOME_MODIFIERS,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_green_priss_grass"));
+    public static final ResourceKey<BiomeModifier> ADD_GIANT_CANOPY_TREE = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_giant_canopy_tree"));
+    public static final ResourceKey<BiomeModifier> ADD_COASTAL_CORAL_FEATURE = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_coastal_coral_feature"));
+    public static final ResourceKey<BiomeModifier> ADD_PARAPHYTE = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_paraphyte"));
+    public static final ResourceKey<BiomeModifier> ADD_FLOROPHYTE = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_florophyte"));
+    public static final ResourceKey<BiomeModifier> ADD_BUBBLEPHYTE = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_bubblephyte"));
+    public static final ResourceKey<BiomeModifier> ADD_PRISS_GRASS_PATCH = ResourceKey.create(
+            ForgeRegistries.Keys.BIOME_MODIFIERS,
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_priss_grass_patch"));
+
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -49,10 +68,9 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 
-        // 2. Ajout de l'herbe au biome spécifique
-        context.register(ADD_PRISS_GRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_PRISS_GRASS_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PRISS_GRASS_PLACED_KEY)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PRISS_GRASS_PATCH_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 
@@ -74,6 +92,26 @@ public class ModBiomeModifiers {
         context.register(ADD_GREEN_PRISS_GRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GREEN_PRISS_GRASS_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_PARAPHYTE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PARAPHYTE_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_FLOROPHYTE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.FLOROPHYTE_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_BUBBLEPHYTE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BUBBLEPHYTE_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_GIANT_CANOPY_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GIANT_CANOPY_TREE_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
     }

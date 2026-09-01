@@ -4,7 +4,6 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
-import net.minecraft.data.worldgen.SurfaceRuleData;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.synth.NormalNoise;
 import net.tototuto.legendchasersremake.LegendChasersRemakeMod;
 import net.tototuto.legendchasersremake.init.LCRBiomes;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModBlocks;
@@ -31,8 +29,6 @@ public class LegendsChasersRemakeDimensions {
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "prissaz"));
     public static final ResourceKey<DimensionType> PRISSAZ_DIM_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "prissaz_type"));
-
-    // 1. Définition de la clé pour vos paramètres de bruit personnalisés
     public static final ResourceKey<NoiseGeneratorSettings> PRISSAZ_NOISE_SETTINGS = ResourceKey.create(
             Registries.NOISE_SETTINGS,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "prissaz_noise_settings")
@@ -48,51 +44,97 @@ public class LegendsChasersRemakeDimensions {
                 (double) 2 / 3,
                 true,
                 false,
-                0,
-                256,
-                256,
+                -64,
+                384,
+                384,
                 BlockTags.INFINIBURN_OVERWORLD,
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS,
-                1.0f,
+                0.0f,
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)
         ));
     }
 
-    // 2. Méthode pour enregistrer la configuration avec VOTRE BLOC
     public static void bootstrapNoiseSettings(BootstapContext<NoiseGeneratorSettings> context) {
-        HolderGetter<DensityFunction> densityFunctions = context.lookup(Registries.DENSITY_FUNCTION);
-        HolderGetter<NormalNoise.NoiseParameters> noises = context.lookup(Registries.NOISE);
-
         NoiseGeneratorSettings overworldSettings = NoiseGeneratorSettings.overworld(context, false, false);
+        NoiseSettings customNoiseSettings = NoiseSettings.create(-64, 384, 1, 2);
 
-        // --- Configuration des règles de surface ---
+        // Détecteurs de liquide et de surface
+        SurfaceRules.ConditionSource isAboveWater = SurfaceRules.waterBlockCheck(0, 0);
+        SurfaceRules.ConditionSource isWaterDepth2 = SurfaceRules.waterStartCheck(-2, 0);
+        SurfaceRules.ConditionSource isTrueSurface = SurfaceRules.abovePreliminarySurface();
+
+        // Traitement des fonds marins (Sable et Gravier)
+        SurfaceRules.RuleSource underwaterFloor = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(
+                        SurfaceRules.not(isWaterDepth2),
+                        SurfaceRules.state(Blocks.GRAVEL.defaultBlockState())
+                ),
+                SurfaceRules.state(Blocks.SAND.defaultBlockState())
+        );
+
+        // Règles de surface
         SurfaceRules.RuleSource prissazSurfaceRule = SurfaceRules.sequence(
-                // Condition : Si on est dans le biome PRISSAZ_PLAIN
+                // 1. Bedrock tout en bas (Y=-64 à -59)
+                SurfaceRules.ifTrue(
+                        SurfaceRules.verticalGradient("bedrock_floor", VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(5)),
+                        SurfaceRules.state(Blocks.BEDROCK.defaultBlockState())
+                ),
+
+                // 2. Biome PRISSAZ_PLAIN
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(LCRBiomes.PRISSAZ_PLAIN),
                         SurfaceRules.sequence(
-                                // Bloc de SURFACE (Remplace le Grass Block vanilla)
+                                // SURFACE DIRECTE (ON_FLOOR)
                                 SurfaceRules.ifTrue(
                                         SurfaceRules.ON_FLOOR,
-                                        SurfaceRules.state(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get().defaultBlockState()) // Ton herbe custom
+                                        SurfaceRules.sequence(
+                                                // SI Vraie Surface EXTERIEURE
+                                                SurfaceRules.ifTrue(
+                                                        isTrueSurface,
+                                                        SurfaceRules.sequence(
+                                                                // Si à l'air libre -> Nylium
+                                                                SurfaceRules.ifTrue(
+                                                                        isAboveWater,
+                                                                        SurfaceRules.state(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get().defaultBlockState())
+                                                                ),
+                                                                // Sinon (sous l'eau en surface) -> Sable/Gravier
+                                                                underwaterFloor
+                                                        )
+                                                ),
+                                                // SI GROTTE (Pas en vraie surface extérieure) -> Pierre Custom
+                                                SurfaceRules.state(LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState())
+                                        )
                                 ),
-                                // Bloc de SOUS-SOL (Remplace la Dirt)
+                                // SOUS LE SOL (UNDER_FLOOR)
                                 SurfaceRules.ifTrue(
                                         SurfaceRules.UNDER_FLOOR,
-                                        SurfaceRules.state(LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState()) // Ta terre custom
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.ifTrue(
+                                                        isTrueSurface,
+                                                        SurfaceRules.ifTrue(
+                                                                SurfaceRules.not(isAboveWater),
+                                                                SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())
+                                                        )
+                                                ),
+                                                SurfaceRules.state(LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState())
+                                        )
                                 )
                         )
                 ),
-                // Règle par défaut pour le reste si nécessaire
-                overworldSettings.surfaceRule()
+
+                // 3. Secours pierre sous terre
+                SurfaceRules.ifTrue(
+                        SurfaceRules.UNDER_FLOOR,
+                        SurfaceRules.state(LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState())
+                )
         );
 
         context.register(PRISSAZ_NOISE_SETTINGS, new NoiseGeneratorSettings(
-                overworldSettings.noiseSettings(),
-                LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState(), // La roche sous la terre (Stone)
+                customNoiseSettings,
+                LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState(),
                 Blocks.WATER.defaultBlockState(),
                 overworldSettings.noiseRouter(),
-                prissazSurfaceRule, // <-- On injecte la règle personnalisée ici
+                prissazSurfaceRule,
                 overworldSettings.spawnTarget(),
                 overworldSettings.seaLevel(),
                 overworldSettings.disableMobGeneration(),
@@ -107,7 +149,6 @@ public class LegendsChasersRemakeDimensions {
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
 
-        // 3. On utilise 'PRISSAZ_NOISE_SETTINGS' au lieu de 'NoiseGeneratorSettings.AMPLIFIED'
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 MultiNoiseBiomeSource.createFromList(
                         new Climate.ParameterList<>(List.of(
@@ -115,11 +156,10 @@ public class LegendsChasersRemakeDimensions {
                                         biomeRegistry.getOrThrow(LCRBiomes.PRISSAZ_PLAIN))
                         ))
                 ),
-                noiseGenSettings.getOrThrow(PRISSAZ_NOISE_SETTINGS) // <--- Utilise la clé personnalisée
+                noiseGenSettings.getOrThrow(PRISSAZ_NOISE_SETTINGS)
         );
 
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(PRISSAZ_DIM_TYPE), noiseBasedChunkGenerator);
-
         context.register(PRISSAZ_KEY, stem);
     }
 }
