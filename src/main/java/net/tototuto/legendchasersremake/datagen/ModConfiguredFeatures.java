@@ -9,6 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +23,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConf
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
@@ -42,7 +46,7 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PARAPHYTE_KEY = registerKey("paraphyte");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOROPHYTE_KEY = registerKey("florophyte");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUBBLEPHYTE_KEY = registerKey("bubblephyte");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GIANT_CANOPY_TREE_KEY = registerKey("giant_canopy_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PROTIUM_SPRUCE_KEY = registerKey("protium_spruce");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PRISS_GRASS_PATCH_KEY = registerKey("priss_grass_patch_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -148,20 +152,28 @@ public class ModConfiguredFeatures {
                 )
         ));
 
-        // 3. Arbre Géant (Giant Canopy Tree)
-        context.register(GIANT_CANOPY_TREE_KEY, new ConfiguredFeature<>(
-                LCRFeatures.GIANT_CANOPY_TREE.get(),
+        context.register(PROTIUM_SPRUCE_KEY, new ConfiguredFeature<>(
+                Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        BlockStateProvider.simple(Blocks.OAK_LOG),
-                        new StraightTrunkPlacer(1, 0, 0),
+                        // 1. Tronc en Protium Log
+                        BlockStateProvider.simple(LegendChasersRemakeModBlocks.PROTIUM_LOG.get()),
+                        // 2. Hauteur du tronc : entre 5 et 7 blocs (base 5, 2 aléatoires)
+                        new StraightTrunkPlacer(5, 2, 0),
+                        // 3. Feuilles
                         BlockStateProvider.simple(
                                 LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get()
                                         .defaultBlockState()
                                         .setValue(LeavesBlock.PERSISTENT, true)
                         ),
-                        new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 2),
-                        new TwoLayersFeatureSize(1, 0, 1)
-                ).build()
+                        // 4. Feuillage type Spruce (Sapin Vanilla)
+                        new SpruceFoliagePlacer(
+                                UniformInt.of(2, 3), // Rayon (largeur du bas du sapin)
+                                UniformInt.of(0, 2), // Offset vertical
+                                UniformInt.of(1, 2)  // Hauteur du sommet
+                        ),
+                        // 5. Contrainte de taille globale
+                        new TwoLayersFeatureSize(2, 0, 2)
+                ).ignoreVines().build()
         ));
     }
 

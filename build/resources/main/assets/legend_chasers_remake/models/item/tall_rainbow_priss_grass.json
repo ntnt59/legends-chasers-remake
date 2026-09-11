@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "legend_chasers_remake:block/tall_rainbow_priss_grass_top"
+  }
+}

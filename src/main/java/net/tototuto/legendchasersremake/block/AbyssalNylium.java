@@ -18,12 +18,10 @@ public class AbyssalNylium extends Block {
     @SuppressWarnings("deprecation")
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         BlockPos abovePos = pos.above();
-        BlockState aboveState = level.getBlockState(abovePos);
-        Block aboveBlock = aboveState.getBlock();
 
-        boolean hasObstacleAbove = !aboveState.isAir() && !aboveState.canBeReplaced();
+        boolean hasObstacleAbove = level.getBlockState(abovePos).isSolidRender(level, abovePos);
 
-        if (hasObstacleAbove && !(aboveBlock instanceof CoralBlock) && !(aboveBlock instanceof BaseCoralPlantTypeBlock)) {
+        if (hasObstacleAbove) {
             level.setBlockAndUpdate(pos, LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState());
         }
     }

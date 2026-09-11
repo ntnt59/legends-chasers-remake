@@ -16,9 +16,8 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
-    public static final ResourceKey<PlacedFeature> GIANT_CANOPY_TREE_PLACED = registerKey("giant_canopy_tree_placed");
+    public static final ResourceKey<PlacedFeature> PROTIUM_SPRUCE_PLACED = registerKey("protium_spruce");
     public static final ResourceKey<PlacedFeature> GRAPHITE_ORE_PLACED = registerKey("graphite_ore");
-    public static final ResourceKey<PlacedFeature> PRISS_GRASS_PLACED_KEY = registerKey("priss_grass_placed");
     public static final ResourceKey<PlacedFeature> BLUE_PRISS_GRASS_PLACED_KEY = registerKey("blue_priss_grass_placed");
     public static final ResourceKey<PlacedFeature> GREEN_PRISS_GRASS_PLACED_KEY = registerKey("green_priss_grass_placed");
     public static final ResourceKey<PlacedFeature> PURPLE_PRISS_GRASS_PLACED_KEY = registerKey("purple_priss_grass_placed");
@@ -26,7 +25,6 @@ public class ModPlacedFeatures {
     public static final ResourceKey<PlacedFeature> PARAPHYTE_KEY = registerKey("paraphyte_placed");
     public static final ResourceKey<PlacedFeature> FLOROPHYTE_KEY = registerKey("florophyte_placed");
     public static final ResourceKey<PlacedFeature> BUBBLEPHYTE_KEY = registerKey("bubblephyte_placed");
-    public static final ResourceKey<PlacedFeature> TALL_PRISS_GRASS_KEY = registerKey("tall_priss_grass_placed");
     public static final ResourceKey<PlacedFeature> PRISS_GRASS_PATCH_PLACED_KEY = registerKey("tall_priss_grass_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -123,8 +121,8 @@ public class ModPlacedFeatures {
         ));
 
         // 3. Arbres
-        context.register(GIANT_CANOPY_TREE_PLACED, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.GIANT_CANOPY_TREE_KEY),
+        context.register(PROTIUM_SPRUCE_PLACED, new PlacedFeature(
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.PROTIUM_SPRUCE_KEY),
                 List.of(
                         RarityFilter.onAverageOnceEvery(6),
                         InSquarePlacement.spread(),

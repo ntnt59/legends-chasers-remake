@@ -1,6 +1,7 @@
 package net.tototuto.legendchasersremake.datagen;
 
 import net.tototuto.legendchasersremake.LegendChasersRemakeMod;
+import net.tototuto.legendchasersremake.init.LegendChasersRemakeModBlocks;
 import net.tototuto.legendchasersremake.init.LegendChasersRemakeModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // 1. Pour un item 2D classique (ex: un lingot, une pomme, etc.)
         simpleItem(LegendChasersRemakeModItems.AQUAMARINE);
+
+        withExistingParent(
+                LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.getId().getPath(),
+                modLoc("block/protium_fence_gate")
+        );
 
         // 2. Pour un outil ou une arme tenue comme un bâton (épée, pioche, etc.)
         /*handheldItem(ModItems.MON_EPEE);*/

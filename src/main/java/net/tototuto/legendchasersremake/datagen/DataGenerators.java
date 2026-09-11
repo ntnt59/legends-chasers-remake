@@ -31,9 +31,14 @@ public class DataGenerators {
         // 2. Loot Tables / Drops (Server)
         generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
 
-        // 3. Block Tags (Server)
+        // 3. Block Tags & Item Tags (Server)
+        // Instanciation unique pour les Block Tags :
+        ModBlockTagProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper);
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+
+        // Item Tags (réutilise blockTagsProvider.contentsGetter()) :
         generator.addProvider(event.includeServer(),
-                new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
+                new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
         // 4. Worldgen (Server)
         generator.addProvider(event.includeServer(),

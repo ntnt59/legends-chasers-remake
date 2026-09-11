@@ -3,6 +3,8 @@ package net.tototuto.legendchasersremake.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.FenceGateBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
@@ -22,6 +24,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE);
         blockWithItem(LegendChasersRemakeModBlocks.PRISS_STONE);
         blockWithItem(LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK);
+        blockWithItem(LegendChasersRemakeModBlocks.PROTIUM_PLANKS);
+        logBlockWithItem(LegendChasersRemakeModBlocks.PROTIUM_LOG);
 
         // Grande herbe à 2 blocs
         tallGrassBlock1(LegendChasersRemakeModBlocks.TALL_PRISS_GRASS, "tall_priss_grass");
@@ -56,6 +60,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 modLoc("block/blue_priss_grass")
         );
 
+        // ###############################
+
+        fenceBlock(
+                (net.minecraft.world.level.block.FenceBlock) LegendChasersRemakeModBlocks.PROTIUM_FENCE.get(),
+                modLoc("block/protium_planks")
+        );
+        simpleBlockItem(
+                LegendChasersRemakeModBlocks.PROTIUM_FENCE.get(),
+                models().fenceInventory(
+                        LegendChasersRemakeModBlocks.PROTIUM_FENCE.getId().getPath() + "_inventory",
+                        modLoc("block/protium_planks")
+                )
+        );
+
+        fenceGateBlock(
+                (FenceGateBlock) LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get(),
+                modLoc("block/protium_planks")
+        );
+
         simpleBlock(LegendChasersRemakeModBlocks.PURPLE_PRISS_GRASS.get(), models().cross(
                 LegendChasersRemakeModBlocks.PURPLE_PRISS_GRASS.getId().getPath(),
                 modLoc("block/purple_priss_grass")
@@ -66,6 +89,41 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "layer0",
                 modLoc("block/purple_priss_grass")
         );
+
+        // #################################
+
+        slabBlock(
+                (net.minecraft.world.level.block.SlabBlock) LegendChasersRemakeModBlocks.PROTIUM_SLAB.get(),
+                modLoc("block/protium_planks"),
+                modLoc("block/protium_planks")
+        );
+        simpleBlockItem(
+                LegendChasersRemakeModBlocks.PROTIUM_SLAB.get(),
+                models().slab(
+                        LegendChasersRemakeModBlocks.PROTIUM_SLAB.getId().getPath(),
+                        modLoc("block/protium_planks"),
+                        modLoc("block/protium_planks"),
+                        modLoc("block/protium_planks")
+                )
+        );
+
+        // ###############################
+
+        stairsBlock(
+                (net.minecraft.world.level.block.StairBlock) LegendChasersRemakeModBlocks.PROTIUM_STAIR.get(),
+                modLoc("block/protium_planks")
+        );
+        simpleBlockItem(
+                LegendChasersRemakeModBlocks.PROTIUM_STAIR.get(),
+                models().stairs(
+                        LegendChasersRemakeModBlocks.PROTIUM_STAIR.getId().getPath(),
+                        modLoc("block/protium_planks"),
+                        modLoc("block/protium_planks"),
+                        modLoc("block/protium_planks")
+                )
+        );
+
+        // ###############################
 
         simpleBlock(LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.get(), models().cross(
                 LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.getId().getPath(),
@@ -172,6 +230,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 "layer0",
                 modLoc("block/" + name + "_top")
         );
+    }
+
+    private void logBlockWithItem(RegistryObject<Block> blockReg) {
+        RotatedPillarBlock block = (RotatedPillarBlock) blockReg.get();
+        String name = blockReg.getId().getPath();
+
+        // Génère le modèle "cube_column" qui cherche 'protium_log.png' (côté) et 'protium_log_top.png' (bout)
+        ModelFile model = models().cubeColumn(name, modLoc("block/" + name), modLoc("block/" + name + "_top"));
+
+        // Applique les rotations pour les axes X, Y, Z
+        axisBlock(block, model, model);
+
+        // Associe le modèle généré à l'item bloc
+        simpleBlockItem(block, model);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

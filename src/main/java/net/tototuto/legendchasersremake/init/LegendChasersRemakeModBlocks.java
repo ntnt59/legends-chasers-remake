@@ -1,9 +1,9 @@
 package net.tototuto.legendchasersremake.init;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
@@ -113,7 +113,7 @@ public class LegendChasersRemakeModBlocks {
                             .isViewBlocking((state, level, pos) -> false)
                             .isSuffocating((state, level, pos) -> false)
             ));
-    
+
     public static final RegistryObject<Block> PRISS_GRASS =
             BLOCKS.register("priss_grass", () -> new PrissazPlantBlock(
                     BlockBehaviour.Properties.of()
@@ -217,5 +217,53 @@ public class LegendChasersRemakeModBlocks {
                             .sound(SoundType.GRASS)
                             .offsetType(BlockBehaviour.OffsetType.XZ)
                             .replaceable()
+            ));
+    public static final RegistryObject<Block> PROTIUM_LOG = BLOCKS.register("protium_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(2.0F)
+                    .sound(SoundType.WOOD)
+            )
+    );
+    public static final RegistryObject<Block> PROTIUM_FENCE = BLOCKS.register("protium_fence",
+            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+
+    public static final RegistryObject<Block> PROTIUM_PLANKS =
+            BLOCKS.register("protium_planks", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLUE)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0f, 3.0f)
+                            .sound(SoundType.WOOD)
+                            .ignitedByLava()
+            ));
+    public static final RegistryObject<Block> PROTIUM_SLAB =
+            BLOCKS.register("protium_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLUE)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0f, 3.0f)
+                            .sound(SoundType.WOOD)
+                            .ignitedByLava()
+            ));
+    public static final RegistryObject<Block> PROTIUM_STAIR =
+            BLOCKS.register("protium_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLUE)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0f, 3.0f)
+                            .sound(SoundType.WOOD)
+                            .ignitedByLava()
+            ));
+    public static final RegistryObject<Block> PROTIUM_FENCE_GATE =
+            BLOCKS.register("protium_fence_gate", () -> new FenceGateBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLUE)
+                            .instrument(NoteBlockInstrument.BASS)
+                            .strength(2.0f, 3.0f)
+                            .sound(SoundType.WOOD)
+                            .ignitedByLava(),
+                    WoodType.OAK
             ));
 }

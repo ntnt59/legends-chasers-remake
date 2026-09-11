@@ -3,6 +3,7 @@
   "item_group.legend_chasers_remake.lcr_combat": "LCR Combat",
   "item_group.legend_chasers_remake.lcr_natural_blocks": "LCR Natural Blocks",
   "item_group.legend_chasers_remake.lcr_ingredients": "LCR Ingredients",
+  "item_group.legend_chasers_remake.lcr_building_blocks": "LCR Building Blocks",
   "item.legend_chasers_remake.electric_sword": "Electric Sword",
   "item.legend_chasers_remake.graphite": "Graphite",
   "block.legend_chasers_remake.graphite_ore": "Graphite Ore",
@@ -17,9 +18,18 @@
   "block.legend_chasers_remake.purple_priss_grass": "Purple Priss Grass",
   "block.legend_chasers_remake.pink_priss_grass": "Pink Priss Grass",
   "block.legend_chasers_remake.green_priss_grass": "Green Priss Grass",
+  "block.legend_chasers_remake.tall_priss_grass": "Tall Priss Grass",
+  "block.legend_chasers_remake.tall_rainbow_priss_grass": "Tall Rainbow Priss Grass",
   "block.legend_chasers_remake.abyssal_nylium_block": "Abyssal Nylium Block",
   "block.legend_chasers_remake.protium_leaves": "Protium Leaves",
   "block.legend_chasers_remake.paraphyte": "Paraphyte",
   "block.legend_chasers_remake.florophyte": "Florophyte",
-  "item.legend_chasers_remake.aquamarine" : "Aquamarine"
+  "block.legend_chasers_remake.bubblephyte": "Bubblephyte",
+  "item.legend_chasers_remake.aquamarine" : "Aquamarine",
+  "block.legend_chasers_remake.protium_log" : "Protium Log",
+  "block.legend_chasers_remake.protium_fence" : "Protium Fence",
+  "block.legend_chasers_remake.protium_slab" : "Protium Slab",
+  "block.legend_chasers_remake.protium_stair" : "Protium Stair",
+  "block.legend_chasers_remake.protium_planks" : "Protium Planks",
+  "block.legend_chasers_remake.protium_fence_gate" : "Protium Fence Gate"
 }

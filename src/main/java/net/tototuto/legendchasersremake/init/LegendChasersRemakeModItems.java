@@ -38,6 +38,12 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> BUBBLEPHYTE;
 	public static final RegistryObject<Item> TALL_PRISS_GRASS ;
 	public static final RegistryObject<Item> TALL_RAINBOW_PRISS_GRASS ;
+	public static final RegistryObject<Item> PROTIUM_LOG;
+	public static final RegistryObject<Item> PROTIUM_FENCE;
+	public static final RegistryObject<Item> PROTIUM_PLANKS;
+	public static final RegistryObject<Item> PROTIUM_STAIR;
+	public static final RegistryObject<Item> PROTIUM_SLAB;
+	public static final RegistryObject<Item> PROTIUM_FENCE_GATE;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -130,6 +136,30 @@ public class LegendChasersRemakeModItems {
 		));
 		TALL_PRISS_GRASS = REGISTRY.register("tall_priss_grass", () -> new BlockItem(
 				LegendChasersRemakeModBlocks.TALL_PRISS_GRASS.get(),
+				new Item.Properties()
+		));
+		PROTIUM_LOG = REGISTRY.register("protium_log", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_LOG.get(),
+				new Item.Properties()
+		));
+		PROTIUM_FENCE = REGISTRY.register("protium_fence", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_FENCE.get(),
+				new Item.Properties()
+		));
+		PROTIUM_PLANKS = REGISTRY.register("protium_planks", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get(),
+				new Item.Properties()
+		));
+		PROTIUM_SLAB = REGISTRY.register("protium_slab", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_SLAB.get(),
+				new Item.Properties()
+		));
+		PROTIUM_STAIR = REGISTRY.register("protium_stair", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_STAIR.get(),
+				new Item.Properties()
+		));
+		PROTIUM_FENCE_GATE = REGISTRY.register("protium_fence_gate", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get(),
 				new Item.Properties()
 		));
 	}

@@ -47,6 +47,12 @@ public class ModLootTableProvider {
             this.dropSelf(LegendChasersRemakeModBlocks.PARAPHYTE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.FLOROPHYTE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.BUBBLEPHYTE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_LOG.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_FENCE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_SLAB.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_STAIR.get());
 
             this.add(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
                     block -> createSingleItemTableWithSilkTouch(block, LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get()));

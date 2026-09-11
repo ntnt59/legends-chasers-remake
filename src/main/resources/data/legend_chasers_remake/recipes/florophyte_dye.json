@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "   ",
+    " a ",
+    "   "
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:florophyte"
+    }
+  },
+  "result": {
+    "item": "minecraft:pink_dye",
+    "count": 1
+  }
+}

@@ -1,75 +1,43 @@
 {
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2026-08-30 13:38:09 +0200"
+      "unlock_right_away": "2026-08-31 18:48:04 +0200"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:beach": "2026-08-30 14:55:27 +0200",
-      "minecraft:mangrove_swamp": "2026-08-30 13:38:10 +0200",
-      "minecraft:sparse_jungle": "2026-08-30 14:55:23 +0200",
-      "minecraft:lukewarm_ocean": "2026-08-30 14:06:50 +0200",
-      "minecraft:river": "2026-08-30 14:55:28 +0200",
-      "minecraft:forest": "2026-08-30 14:55:40 +0200",
-      "minecraft:ocean": "2026-08-30 14:07:11 +0200",
-      "minecraft:jungle": "2026-08-30 14:55:45 +0200",
-      "minecraft:plains": "2026-08-30 14:55:50 +0200"
+      "minecraft:forest": "2026-08-31 18:48:05 +0200"
     },
     "done": false
   },
-  "minecraft:recipes/transportation/mangrove_boat": {
+  "minecraft:recipes/decorations/chest": {
     "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
+      "has_lots_of_items": "2026-08-31 18:52:27 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/acacia_boat": {
+  "minecraft:recipes/misc/white_dye": {
     "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
+      "has_bone_meal": "2026-08-31 18:53:01 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/cherry_boat": {
+  "minecraft:recipes/building_blocks/bone_block": {
     "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
+      "has_bone_meal": "2026-08-31 18:53:01 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/bamboo_raft": {
+  "minecraft:recipes/misc/cyan_dye_from_pitcher_plant": {
     "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
+      "has_pitcher_plant": "2026-08-31 18:54:03 +0200"
     },
     "done": true
   },
-  "minecraft:recipes/transportation/spruce_boat": {
+  "minecraft:recipes/misc/pink_dye_from_peony": {
     "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/birch_boat": {
-    "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/oak_boat": {
-    "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/jungle_boat": {
-    "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
-    },
-    "done": true
-  },
-  "minecraft:recipes/transportation/dark_oak_boat": {
-    "criteria": {
-      "in_water": "2026-08-30 14:55:35 +0200"
+      "has_peony": "2026-08-31 18:54:39 +0200"
     },
     "done": true
   },

@@ -68,6 +68,20 @@ public class LegendChasersRemakeModTabs {
 					)
 					.build());
 
+	public static final RegistryObject<CreativeModeTab> LCR_BUILDING_BLOCKS = REGISTRY.register("lcr_building_blocks",
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.legend_chasers_remake.lcr_building_blocks"))
+					.icon(() -> new ItemStack(LegendChasersRemakeModItems.PROTIUM_PLANKS.get()))
+					.displayItems((parameters, tabData) -> {
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_PLANKS.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_FENCE.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_FENCE_GATE.get());
+
+							}
+					)
+					.build());
+
 	public static final RegistryObject<CreativeModeTab> LCR_INGREDIENTS = REGISTRY.register("lcr_ingredients",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.legend_chasers_remake.lcr_ingredients"))
 					.icon(() -> new ItemStack(LegendChasersRemakeModItems.GRAPHITE.get()))

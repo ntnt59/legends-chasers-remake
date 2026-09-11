@@ -37,9 +37,9 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_GREEN_PRISS_GRASS = ResourceKey.create(
             ForgeRegistries.Keys.BIOME_MODIFIERS,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_green_priss_grass"));
-    public static final ResourceKey<BiomeModifier> ADD_GIANT_CANOPY_TREE = ResourceKey.create(
+    public static final ResourceKey<BiomeModifier> ADD_PROTIUM_SPRUCE = ResourceKey.create(
             ForgeRegistries.Keys.BIOME_MODIFIERS,
-            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_giant_canopy_tree"));
+            ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_protium_spruce"));
     public static final ResourceKey<BiomeModifier> ADD_COASTAL_CORAL_FEATURE = ResourceKey.create(
             ForgeRegistries.Keys.BIOME_MODIFIERS,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "add_coastal_coral_feature"));
@@ -109,9 +109,9 @@ public class ModBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BUBBLEPHYTE_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
-        context.register(ADD_GIANT_CANOPY_TREE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_PROTIUM_SPRUCE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(LCRBiomes.PRISSAZ_PLAIN)), // Il faut HolderSet.direct() !
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.GIANT_CANOPY_TREE_PLACED)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.PROTIUM_SPRUCE_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
     }

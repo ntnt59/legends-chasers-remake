@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "legend_chasers_remake:protium_log"
+    }
+  ],
+  "result": {
+    "item": "legend_chasers_remake:protium_planks",
+    "count": 4
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "legend_chasers_remake:block/priss_grass"
+    "layer0": "legend_chasers_remake:block/priss_grass_b"
   }
 }

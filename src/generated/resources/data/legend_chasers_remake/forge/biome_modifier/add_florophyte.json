@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "legend_chasers_remake:prissaz_plain",
+  "features": "legend_chasers_remake:florophyte_placed",
+  "step": "vegetal_decoration"
+}
