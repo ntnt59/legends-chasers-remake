@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side_tall",
+  "textures": {
+    "wall": "legend_chasers_remake:block/mossy_priss_cobblestone"
+  }
+}

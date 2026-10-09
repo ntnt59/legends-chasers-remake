@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "legend_chasers_remake:prissaz_plain",
-  "features": "legend_chasers_remake:tall_priss_grass_placed",
+  "features": "legend_chasers_remake:priss_grass_patch_placed",
   "step": "vegetal_decoration"
 }

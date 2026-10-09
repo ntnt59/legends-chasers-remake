@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:priss_stone"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:priss_stone_slab",
+    "count": 6
+  }
+}

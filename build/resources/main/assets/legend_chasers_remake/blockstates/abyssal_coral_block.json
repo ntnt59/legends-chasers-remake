@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "ambient_light=0": {
+      "model": "legend_chasers_remake:block/bioluminescent_abyssal_coral_block"
+    },
+    "ambient_light=1": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=10": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=11": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=12": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=13": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=14": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=15": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=2": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=3": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=4": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=5": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=6": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=7": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=8": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    },
+    "ambient_light=9": {
+      "model": "legend_chasers_remake:block/abyssal_coral_block"
+    }
+  }
+}

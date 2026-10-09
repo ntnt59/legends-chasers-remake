@@ -2,7 +2,7 @@
   "ambient_light": 0.0,
   "bed_works": true,
   "coordinate_scale": 0.6666666666666666,
-  "effects": "minecraft:overworld",
+  "effects": "legend_chasers_remake:prissaz_effects",
   "has_ceiling": false,
   "has_raids": false,
   "has_skylight": true,

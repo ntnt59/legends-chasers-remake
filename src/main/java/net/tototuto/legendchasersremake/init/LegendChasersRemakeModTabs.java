@@ -1,26 +1,20 @@
 package net.tototuto.legendchasersremake.init;
 
+import net.minecraft.core.registries.Registries; // <-- Très important
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.tototuto.legendchasersremake.LegendChasersRemakeMod;
-import net.tototuto.legendchasersremake.init.LegendChasersRemakeModItems;
-
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.core.registries.Registries;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class LegendChasersRemakeModTabs {
-	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LegendChasersRemakeMod.MODID);
+
+	public static final DeferredRegister<CreativeModeTab> REGISTRY =
+			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LegendChasersRemakeMod.MODID);
 
 	public static final RegistryObject<CreativeModeTab> LCR_FUNCTIONAL_BLOCKS = REGISTRY.register("lcr_functional_blocks",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.legend_chasers_remake.lcr_functional_blocks"))
@@ -47,14 +41,13 @@ public class LegendChasersRemakeModTabs {
 					.icon(() -> new ItemStack(LegendChasersRemakeModItems.ABYSSAL_NYLIUM_BLOCK.get()))
 					.displayItems((parameters, tabData) -> {
 								tabData.accept(LegendChasersRemakeModItems.GRAPHITE_ORE.get());
-						tabData.accept(LegendChasersRemakeModItems.ABYSSAL_NYLIUM_BLOCK.get());
+								tabData.accept(LegendChasersRemakeModItems.ABYSSAL_NYLIUM_BLOCK.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get());
 								tabData.accept(LegendChasersRemakeModItems.AQUAMARINE_BLOCK.get());
 								tabData.accept(LegendChasersRemakeModItems.PRISS_GRASS.get());
 								tabData.accept(LegendChasersRemakeModItems.TALL_PRISS_GRASS.get());
 								tabData.accept(LegendChasersRemakeModItems.TALL_RAINBOW_PRISS_GRASS.get());
-								tabData.accept(LegendChasersRemakeModItems.TALL_PRISS_GRASS.get());
 								tabData.accept(LegendChasersRemakeModItems.GREEN_PRISS_GRASS.get());
 								tabData.accept(LegendChasersRemakeModItems.BLUE_PRISS_GRASS.get());
 								tabData.accept(LegendChasersRemakeModItems.PURPLE_PRISS_GRASS.get());
@@ -63,21 +56,45 @@ public class LegendChasersRemakeModTabs {
 								tabData.accept(LegendChasersRemakeModItems.FLOROPHYTE.get());
 								tabData.accept(LegendChasersRemakeModItems.PARAPHYTE.get());
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_LEAVES.get());
-
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_LOG.get());
+								tabData.accept(LegendChasersRemakeModItems.STRIPPED_PROTIUM_LOG.get());
+								tabData.accept(LegendChasersRemakeModItems.ABYSSAL_CORAL_BLOCK.get());
 							}
 					)
 					.build());
 
 	public static final RegistryObject<CreativeModeTab> LCR_BUILDING_BLOCKS = REGISTRY.register("lcr_building_blocks",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.legend_chasers_remake.lcr_building_blocks"))
-					.icon(() -> new ItemStack(LegendChasersRemakeModItems.PROTIUM_PLANKS.get()))
+					.icon(() -> new ItemStack(LegendChasersRemakeModItems.PRISS_BRICK.get()))
 					.displayItems((parameters, tabData) -> {
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_PLANKS.get());
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_SLAB.get());
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_STAIR.get());
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_FENCE.get());
 								tabData.accept(LegendChasersRemakeModItems.PROTIUM_FENCE_GATE.get());
-
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_DOOR.get());
+								tabData.accept(LegendChasersRemakeModItems.PROTIUM_TRAPDOOR.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_COBBLESTONE_WALL.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_BRICK.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_BRICK_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_BRICK_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_BRICK_WALL.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE_PRESSURE_PLATE.get());
+								tabData.accept(LegendChasersRemakeModItems.PRISS_STONE_BUTTON.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_COBBLESTONE.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_COBBLESTONE_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_COBBLESTONE_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_COBBLESTONE_WALL.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_BRICK.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_BRICK_SLAB.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_BRICK_STAIR.get());
+								tabData.accept(LegendChasersRemakeModItems.MOSSY_PRISS_BRICK_WALL.get());
 							}
 					)
 					.build());
@@ -87,12 +104,8 @@ public class LegendChasersRemakeModTabs {
 					.icon(() -> new ItemStack(LegendChasersRemakeModItems.GRAPHITE.get()))
 					.displayItems((parameters, tabData) -> {
 								tabData.accept(LegendChasersRemakeModItems.GRAPHITE.get());
-						        tabData.accept(LegendChasersRemakeModItems.AQUAMARINE.get());
+								tabData.accept(LegendChasersRemakeModItems.AQUAMARINE.get());
 							}
 					)
 					.build());
-
-	@SubscribeEvent
-	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-	}
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "legend_chasers_remake:block/protium_planks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "legend_chasers_remake:block/priss_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "legend_chasers_remake:block/priss_cobblestone"
+    },
+    "type=top": {
+      "model": "legend_chasers_remake:block/priss_cobblestone_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "legend_chasers_remake:block/stripped_protium_log_top",
+    "side": "legend_chasers_remake:block/stripped_protium_log"
+  }
+}

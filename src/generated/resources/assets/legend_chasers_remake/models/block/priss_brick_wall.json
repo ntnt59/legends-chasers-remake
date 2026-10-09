@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "legend_chasers_remake:block/priss_brick"
+  }
+}

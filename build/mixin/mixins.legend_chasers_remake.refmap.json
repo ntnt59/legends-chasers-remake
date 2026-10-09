@@ -1,19 +1,27 @@
 {
   "mappings": {
     "net/tototuto/legendchasersremake/mixin/CoralBlockMixin": {
-      "scanForWater": "Lnet/minecraft/world/level/block/CoralBlock;m_52134_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+      "tick": "Lnet/minecraft/world/level/block/CoralBlock;m_213897_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V",
+      "updateShape": "Lnet/minecraft/world/level/block/CoralBlock;m_7417_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
+    },
+    "net/tototuto/legendchasersremake/mixin/CustomFluidFlowMixin": {
+      "getSlopeFindDistance": "Lnet/minecraft/world/level/material/LavaFluid;m_6719_(Lnet/minecraft/world/level/LevelReader;)I"
     },
     "net/tototuto/legendchasersremake/mixin/BaseCoralPlantTypeBlockMixin": {
-      "scanForWater": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49186_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+      "tryScheduleDieTick": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49164_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)V"
     }
   },
   "data": {
     "searge": {
       "net/tototuto/legendchasersremake/mixin/CoralBlockMixin": {
-        "scanForWater": "Lnet/minecraft/world/level/block/CoralBlock;m_52134_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+        "tick": "Lnet/minecraft/world/level/block/CoralBlock;m_213897_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V",
+        "updateShape": "Lnet/minecraft/world/level/block/CoralBlock;m_7417_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/state/BlockState;"
+      },
+      "net/tototuto/legendchasersremake/mixin/CustomFluidFlowMixin": {
+        "getSlopeFindDistance": "Lnet/minecraft/world/level/material/LavaFluid;m_6719_(Lnet/minecraft/world/level/LevelReader;)I"
       },
       "net/tototuto/legendchasersremake/mixin/BaseCoralPlantTypeBlockMixin": {
-        "scanForWater": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49186_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z"
+        "tryScheduleDieTick": "Lnet/minecraft/world/level/block/BaseCoralPlantTypeBlock;m_49164_(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)V"
       }
     }
   }

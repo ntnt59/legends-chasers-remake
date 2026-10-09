@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    " aa"
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:priss_stone"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:priss_brick",
+    "count": 4
+  }
+}

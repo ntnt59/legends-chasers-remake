@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "legend_chasers_remake:block/mossy_priss_brick_slab"
+    },
+    "type=double": {
+      "model": "legend_chasers_remake:block/mossy_priss_brick"
+    },
+    "type=top": {
+      "model": "legend_chasers_remake:block/mossy_priss_brick_slab_top"
+    }
+  }
+}

@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "net.tototuto.legendchasersremake.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.legend_chasers_remake.refmap.json",
   "mixins": [
     "BaseCoralPlantTypeBlockMixin",
     "CoralBlockMixin"

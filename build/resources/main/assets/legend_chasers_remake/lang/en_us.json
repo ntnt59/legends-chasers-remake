@@ -11,7 +11,33 @@
   "block.legend_chasers_remake.foundry_casing": "Foundry Casing",
   "block.legend_chasers_remake.foundry": "Foundry",
   "block.legend_chasers_remake.priss_stone": "Priss Stone",
+  "block.legend_chasers_remake.priss_stone_slab": "Priss Stone Slab",
+  "block.legend_chasers_remake.priss_stone_stair": "Priss Stone Stair",
   "block.legend_chasers_remake.priss_cobblestone": "Priss Cobblestone",
+  "block.legend_chasers_remake.priss_stone_button": "Priss Stone Button",
+  "block.legend_chasers_remake.priss_stone_pressure_plate": "Priss Stone Pressure Plate",
+  "block.legend_chasers_remake.priss_stone_wall": "Priss Stone Wall",
+
+  "block.legend_chasers_remake.priss_cobblestone_stair": "Priss Cobblestone Stair",
+  "block.legend_chasers_remake.priss_cobblestone_wall": "Priss Cobblestone Wall",
+  "block.legend_chasers_remake.priss_cobblestone_slab": "Priss Cobblestone Slab",
+
+  "block.legend_chasers_remake.priss_brick": "Priss Brick",
+  "block.legend_chasers_remake.priss_brick_wall": "Priss Brick Wall",
+  "block.legend_chasers_remake.priss_brick_stair": "Priss Brick Stair",
+  "block.legend_chasers_remake.priss_brick_slab": "Priss Brick Slab",
+
+  "block.legend_chasers_remake.mossy_priss_brick_wall": "Mossy Priss Brick Wall",
+  "block.legend_chasers_remake.mossy_priss_brick_stair": "Mossy Priss Brick Stair",
+  "block.legend_chasers_remake.mossy_priss_brick_slab": "Mossy Priss Brick Slab",
+
+  "block.legend_chasers_remake.mossy_priss_brick": "Mossy Priss Brick",
+
+  "block.legend_chasers_remake.mossy_priss_cobblestone": "Mossy Priss Cobblestone",
+  "block.legend_chasers_remake.mossy_priss_cobblestone_stair": "Mossy Priss Cobblestone Stair",
+  "block.legend_chasers_remake.mossy_priss_cobblestone_slab": "Mossy Priss Cobblestone Slab",
+  "block.legend_chasers_remake.mossy_priss_cobblestone_wall": "Mossy Priss Cobblestone Wall",
+
   "block.legend_chasers_remake.aquamarine_block": "Aquamarine Block",
   "block.legend_chasers_remake.priss_grass": "Priss Grass",
   "block.legend_chasers_remake.blue_priss_grass": "Blue Priss Grass",
@@ -27,9 +53,13 @@
   "block.legend_chasers_remake.bubblephyte": "Bubblephyte",
   "item.legend_chasers_remake.aquamarine" : "Aquamarine",
   "block.legend_chasers_remake.protium_log" : "Protium Log",
+  "block.legend_chasers_remake.stripped_protium_log" : "Stripped Protium Log",
   "block.legend_chasers_remake.protium_fence" : "Protium Fence",
   "block.legend_chasers_remake.protium_slab" : "Protium Slab",
   "block.legend_chasers_remake.protium_stair" : "Protium Stair",
   "block.legend_chasers_remake.protium_planks" : "Protium Planks",
-  "block.legend_chasers_remake.protium_fence_gate" : "Protium Fence Gate"
+  "block.legend_chasers_remake.protium_door" : "Protium Door",
+  "block.legend_chasers_remake.protium_trapdoor" : "Protium Trapdoor",
+  "block.legend_chasers_remake.protium_fence_gate" : "Protium Fence Gate",
+  "block.legend_chasers_remake.abyssal_coral_block" : "Abyssal Coral Block"
 }

@@ -23,6 +23,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Ajoute la planche au tag d'items "planks" (vanilla et forge)
         this.tag(ItemTags.PLANKS)
                 .add(LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get().asItem());
+        this.tag(ItemTags.STONE_TOOL_MATERIALS)
+                .add(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get().asItem());
+        this.tag(ItemTags.STONE_CRAFTING_MATERIALS)
+                .add(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get().asItem());
 
     }
 }

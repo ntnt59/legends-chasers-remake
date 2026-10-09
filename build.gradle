@@ -62,9 +62,9 @@ dependencies {
 }
 
 jar {
-    if (file("src/main/resources/legend_chasers_remake.mixins.json").exists()) {
+    if (file("src/main/resources/mixins.legend_chasers_remake.json").exists()) {
         manifest.attributes([
-                "MixinConfigs": "legend_chasers_remake.mixins.json"
+                "MixinConfigs": "mixins.legend_chasers_remake.json"
         ])
     }
 }

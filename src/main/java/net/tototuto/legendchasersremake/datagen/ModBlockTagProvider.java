@@ -30,16 +30,50 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         LegendChasersRemakeModBlocks.IRON_FRAME.get(),
                         LegendChasersRemakeModBlocks.FOUNDRY_CASING.get(),
                         LegendChasersRemakeModBlocks.FOUNDRY.get(),
+
+                        LegendChasersRemakeModBlocks.PRISS_BRICK.get(),
+                        LegendChasersRemakeModBlocks.PRISS_BRICK_STAIR.get(),
+                        LegendChasersRemakeModBlocks.PRISS_BRICK_SLAB.get(),
+                        LegendChasersRemakeModBlocks.PRISS_BRICK_WALL.get(),
+
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_STAIR.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_SLAB.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_WALL.get(),
+
                         LegendChasersRemakeModBlocks.PRISS_STONE.get(),
+                        LegendChasersRemakeModBlocks.PRISS_STONE_SLAB.get(),
+                        LegendChasersRemakeModBlocks.PRISS_STONE_STAIR.get(),
+                        LegendChasersRemakeModBlocks.PRISS_STONE_BUTTON.get(),
+                        LegendChasersRemakeModBlocks.PRISS_STONE_PRESSURE_PLATE.get(),
+
                         LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get(),
+                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_STAIR.get(),
+                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_SLAB.get(),
+                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_SLAB.get(),
+
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_STAIR.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_SLAB.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_SLAB.get(),
+
                         LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK.get(),
                         LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get());
 
         this.tag(BlockTags.FENCES)
                 .add(LegendChasersRemakeModBlocks.PROTIUM_FENCE.get());
 
+        this.tag(BlockTags.WALLS)
+                .add(LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_WALL.get(),
+                        LegendChasersRemakeModBlocks.PRISS_BRICK_WALL.get(),
+                        LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_WALL.get(),
+                        LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_WALL.get());
+
+
+
         this.tag(BlockTags.MINEABLE_WITH_AXE)
                 .add(LegendChasersRemakeModBlocks.PROTIUM_LOG.get(),
+                        LegendChasersRemakeModBlocks.STRIPPED_PROTIUM_LOG.get(),
                         LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get(),
                         LegendChasersRemakeModBlocks.PROTIUM_FENCE.get(),
                         LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get(),

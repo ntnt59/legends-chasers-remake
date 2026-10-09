@@ -11,7 +11,6 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
@@ -23,6 +22,11 @@ import java.util.List;
 import java.util.OptionalLong;
 
 public class LegendsChasersRemakeDimensions {
+
+    // 1. AJOUT : On crée l'identifiant pour les effets visuels de ta dimension (Soleil/Lune)
+    public static final ResourceLocation PRISSAZ_EFFECTS = ResourceLocation.fromNamespaceAndPath(
+            LegendChasersRemakeMod.MODID, "prissaz_effects");
+
     public static final ResourceKey<LevelStem> PRISSAZ_KEY = ResourceKey.create(Registries.LEVEL_STEM,
             ResourceLocation.fromNamespaceAndPath(LegendChasersRemakeMod.MODID, "prissaz"));
     public static final ResourceKey<Level> PRISSAZ_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
@@ -48,7 +52,7 @@ public class LegendsChasersRemakeDimensions {
                 384,
                 384,
                 BlockTags.INFINIBURN_OVERWORLD,
-                BuiltinDimensionTypes.OVERWORLD_EFFECTS,
+                PRISSAZ_EFFECTS,
                 0.0f,
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)
         ));
@@ -136,10 +140,10 @@ public class LegendsChasersRemakeDimensions {
                 overworldSettings.noiseRouter(),
                 prissazSurfaceRule,
                 overworldSettings.spawnTarget(),
-                overworldSettings.seaLevel(),
+                76,
                 overworldSettings.disableMobGeneration(),
                 overworldSettings.aquifersEnabled(),
-                overworldSettings.oreVeinsEnabled(),
+                false,
                 overworldSettings.useLegacyRandomSource()
         ));
     }

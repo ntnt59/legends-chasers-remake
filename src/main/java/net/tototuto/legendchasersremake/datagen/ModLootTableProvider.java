@@ -41,18 +41,53 @@ public class ModLootTableProvider {
             this.dropSelf(LegendChasersRemakeModBlocks.IRON_FRAME.get());
             this.dropSelf(LegendChasersRemakeModBlocks.FOUNDRY_CASING.get());
             this.dropSelf(LegendChasersRemakeModBlocks.FOUNDRY.get());
+
             this.dropSelf(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_SLAB.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_WALL.get());
+
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_SLAB.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_WALL.get());
+
+            this.dropSelf(LegendChasersRemakeModBlocks.POTTED_BUBBLEPHYTE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.POTTED_FLOROPHYTE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.POTTED_PARAPHYTE.get());
+
             this.dropSelf(LegendChasersRemakeModBlocks.AQUAMARINE_BLOCK.get());
             this.dropSelf(LegendChasersRemakeModBlocks.BLUE_MYSTERIOUS_BRICKS.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PARAPHYTE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.FLOROPHYTE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.BUBBLEPHYTE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_LOG.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.STRIPPED_PROTIUM_LOG.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_FENCE.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_STONE_PRESSURE_PLATE.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_STONE_BUTTON.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_STONE_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_STONE_SLAB.get());
+
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_BRICK_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_BRICK_SLAB.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_BRICK_WALL.get());
+
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_SLAB.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_WALL.get());
+
+            this.add(LegendChasersRemakeModBlocks.PROTIUM_DOOR.get(), block ->
+                    createDoorTable(block)
+            );
+            this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_TRAPDOOR.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_PLANKS.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_SLAB.get());
             this.dropSelf(LegendChasersRemakeModBlocks.PROTIUM_STAIR.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.PRISS_BRICK.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK.get());
+            this.dropSelf(LegendChasersRemakeModBlocks.ABYSSAL_CORAL_BLOCK.get());
 
             this.add(LegendChasersRemakeModBlocks.ABYSSAL_NYLIUM_BLOCK.get(),
                     block -> createSingleItemTableWithSilkTouch(block, LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get()));
@@ -81,6 +116,7 @@ public class ModLootTableProvider {
 
             this.add(LegendChasersRemakeModBlocks.PRISS_STONE.get(), block ->
                     this.createSingleItemTable(LegendChasersRemakeModItems.PRISS_COBBLESTONE.get()));
+
             // 3. Cas complexe : Poids (weights), Quantités personnalisées (rolls) et Fortune
             // Exemple : Drop entre 2 et 5 items, sensible au Fortune
             /*

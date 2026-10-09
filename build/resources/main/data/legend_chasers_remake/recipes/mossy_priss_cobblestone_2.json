@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab "
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:priss_cobblestone"
+    },
+    "b": {
+      "item": "minecraft:moss_block"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:mossy_priss_cobblestone",
+    "count": 1
+  }
+}

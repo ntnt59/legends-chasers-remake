@@ -25,15 +25,23 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(LegendChasersRemakeModItems.AQUAMARINE);
 
         withExistingParent(
+                LegendChasersRemakeModItems.LIGHT_POINTER_ITEM.getId().getPath(),
+                modLoc("item/graphite")
+        );
+
+        withExistingParent(
                 LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.getId().getPath(),
                 modLoc("block/protium_fence_gate")
         );
-
-        // 2. Pour un outil ou une arme tenue comme un bâton (épée, pioche, etc.)
-        /*handheldItem(ModItems.MON_EPEE);*/
-
-        // 3. Pour un item qui utilise le modèle 3D d'un bloc existant (ex: un bloc posable sous forme d'item)
-        // buttonItem(ModItems.MON_BOUTON, ModBlocks.MON_BOUTON);
+        this.basicItem(LegendChasersRemakeModItems.PROTIUM_DOOR.get());
+        this.withExistingParent(
+                LegendChasersRemakeModBlocks.PROTIUM_TRAPDOOR.getId().getPath(),
+                modLoc("block/protium_trapdoor_bottom")
+        );
+        this.withExistingParent(
+                LegendChasersRemakeModBlocks.ABYSSAL_CORAL_BLOCK.getId().getPath(),
+                modLoc("block/abyssal_coral_block")
+        );
     }
 
     // Helper pour générer un item 2D standard (utilise le parent "item/generated")

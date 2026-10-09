@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 import net.tototuto.legendchasersremake.item.ElectricSwordItem;
+import net.tototuto.legendchasersremake.item.LightPointerItem;
 
 public class LegendChasersRemakeModItems {
 	public static final String ModClass = "LegendChasersRemakeModBlocks";
@@ -22,6 +23,10 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> FOUNDRY_CASING;
 	public static final RegistryObject<Item> FOUNDRY;
 	public static final RegistryObject<Item> PRISS_STONE;
+	public static final RegistryObject<Item> PRISS_STONE_BUTTON;
+	public static final RegistryObject<Item> PRISS_STONE_PRESSURE_PLATE;
+	public static final RegistryObject<Item> PRISS_STONE_SLAB;
+	public static final RegistryObject<Item> PRISS_STONE_STAIR;
 	public static final RegistryObject<Item> PRISS_COBBLESTONE;
 	public static final RegistryObject<Item> AQUAMARINE_BLOCK;
 	public static final RegistryObject<Item> BLUE_MYSTERIOUS_BRICKS;
@@ -39,11 +44,31 @@ public class LegendChasersRemakeModItems {
 	public static final RegistryObject<Item> TALL_PRISS_GRASS ;
 	public static final RegistryObject<Item> TALL_RAINBOW_PRISS_GRASS ;
 	public static final RegistryObject<Item> PROTIUM_LOG;
+	public static final RegistryObject<Item> STRIPPED_PROTIUM_LOG;
 	public static final RegistryObject<Item> PROTIUM_FENCE;
 	public static final RegistryObject<Item> PROTIUM_PLANKS;
 	public static final RegistryObject<Item> PROTIUM_STAIR;
 	public static final RegistryObject<Item> PROTIUM_SLAB;
+	public static final RegistryObject<Item> PROTIUM_DOOR;
+	public static final RegistryObject<Item> PROTIUM_TRAPDOOR;
 	public static final RegistryObject<Item> PROTIUM_FENCE_GATE;
+	public static final RegistryObject<Item> PRISS_BRICK;
+	public static final RegistryObject<Item> MOSSY_PRISS_BRICK;
+	public static final RegistryObject<Item> ABYSSAL_CORAL_BLOCK;
+	public static final RegistryObject<Item> MOSSY_PRISS_COBBLESTONE;
+	public static final RegistryObject<Item> LIGHT_POINTER_ITEM;
+	public static final RegistryObject<Item> PRISS_BRICK_SLAB;
+	public static final RegistryObject<Item> PRISS_BRICK_STAIR;
+	public static final RegistryObject<Item> PRISS_BRICK_WALL;
+	public static final RegistryObject<Item> MOSSY_PRISS_BRICK_SLAB;
+	public static final RegistryObject<Item> MOSSY_PRISS_BRICK_STAIR;
+	public static final RegistryObject<Item> MOSSY_PRISS_BRICK_WALL;
+	public static final RegistryObject<Item> PRISS_COBBLESTONE_SLAB;
+	public static final RegistryObject<Item> PRISS_COBBLESTONE_STAIR;
+	public static final RegistryObject<Item> PRISS_COBBLESTONE_WALL;
+	public static final RegistryObject<Item> MOSSY_PRISS_COBBLESTONE_SLAB;
+	public static final RegistryObject<Item> MOSSY_PRISS_COBBLESTONE_STAIR;
+	public static final RegistryObject<Item> MOSSY_PRISS_COBBLESTONE_WALL;
 
 	static {
 		ELECTRIC_SWORD = REGISTRY.register("electric_sword", ElectricSwordItem::new);
@@ -75,6 +100,22 @@ public class LegendChasersRemakeModItems {
 				LegendChasersRemakeModBlocks.PRISS_STONE.get(),
 				new Item.Properties()
 		));
+		PRISS_STONE_SLAB = REGISTRY.register("priss_stone_slab", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_STONE_SLAB.get(),
+				new Item.Properties()
+		));
+		PRISS_STONE_STAIR = REGISTRY.register("priss_stone_stair", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_STONE_STAIR.get(),
+				new Item.Properties()
+		));
+		PRISS_STONE_BUTTON = REGISTRY.register("priss_stone_button", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_STONE_BUTTON.get(),
+				new Item.Properties()
+		));
+		PRISS_STONE_PRESSURE_PLATE = REGISTRY.register("priss_stone_pressure_plate", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_STONE_PRESSURE_PLATE.get(),
+				new Item.Properties()
+		));
 		PRISS_COBBLESTONE = REGISTRY.register("priss_cobblestone", () -> new BlockItem(
 				LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get(),
 				new Item.Properties()
@@ -88,6 +129,9 @@ public class LegendChasersRemakeModItems {
 				new Item.Properties()
 		));
 		AQUAMARINE = REGISTRY.register("aquamarine", () -> new Item(
+				new Item.Properties()
+		));
+		LIGHT_POINTER_ITEM = REGISTRY.register("light_pointer_item", () -> new LightPointerItem(
 				new Item.Properties()
 		));
 		ABYSSAL_NYLIUM_BLOCK = REGISTRY.register("abyssal_nylium_block", () -> new BlockItem(
@@ -142,6 +186,10 @@ public class LegendChasersRemakeModItems {
 				LegendChasersRemakeModBlocks.PROTIUM_LOG.get(),
 				new Item.Properties()
 		));
+		STRIPPED_PROTIUM_LOG = REGISTRY.register("stripped_protium_log", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.STRIPPED_PROTIUM_LOG.get(),
+				new Item.Properties()
+		));
 		PROTIUM_FENCE = REGISTRY.register("protium_fence", () -> new BlockItem(
 				LegendChasersRemakeModBlocks.PROTIUM_FENCE.get(),
 				new Item.Properties()
@@ -160,6 +208,84 @@ public class LegendChasersRemakeModItems {
 		));
 		PROTIUM_FENCE_GATE = REGISTRY.register("protium_fence_gate", () -> new BlockItem(
 				LegendChasersRemakeModBlocks.PROTIUM_FENCE_GATE.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_BRICK = REGISTRY.register("mossy_priss_brick", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK.get(),
+				new Item.Properties()
+		));
+		PRISS_BRICK = REGISTRY.register("priss_brick", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_BRICK.get(),
+				new Item.Properties()
+		));
+		PROTIUM_DOOR = REGISTRY.register("protium_door", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_DOOR.get(),
+				new Item.Properties()
+		));
+		PROTIUM_TRAPDOOR = REGISTRY.register("protium_trapdoor", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PROTIUM_TRAPDOOR.get(),
+				new Item.Properties()
+		));
+		ABYSSAL_CORAL_BLOCK = REGISTRY.register("abyssal_coral_block", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.ABYSSAL_CORAL_BLOCK.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_COBBLESTONE = REGISTRY.register("mossy_priss_cobblestone", () -> new BlockItem(
+		                LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE.get(),
+						new Item.Properties()
+				));
+		PRISS_BRICK_SLAB = REGISTRY.register("priss_brick_slab", () -> new BlockItem(
+		        LegendChasersRemakeModBlocks.PRISS_BRICK_SLAB.get(),
+		        new Item.Properties()
+		));
+		PRISS_BRICK_STAIR = REGISTRY.register("priss_brick_stair", () -> new BlockItem(
+		        LegendChasersRemakeModBlocks.PRISS_BRICK_STAIR.get(),
+		        new Item.Properties()
+		));
+		PRISS_BRICK_WALL = REGISTRY.register("priss_brick_wall", () -> new BlockItem(
+		        LegendChasersRemakeModBlocks.PRISS_BRICK_WALL.get(),
+		        new Item.Properties()
+		));
+		MOSSY_PRISS_BRICK_SLAB = REGISTRY.register("mossy_priss_brick_slab", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_SLAB.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_BRICK_STAIR = REGISTRY.register("mossy_priss_brick_stair", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_STAIR.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_BRICK_WALL = REGISTRY.register("mossy_priss_brick_wall", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_BRICK_WALL.get(),
+				new Item.Properties()
+		));
+
+		// #########################
+
+		PRISS_COBBLESTONE_SLAB = REGISTRY.register("priss_cobblestone_slab", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_SLAB.get(),
+				new Item.Properties()
+		));
+		PRISS_COBBLESTONE_STAIR = REGISTRY.register("priss_cobblestone_stair", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_STAIR.get(),
+				new Item.Properties()
+		));
+		PRISS_COBBLESTONE_WALL = REGISTRY.register("priss_cobblestone_wall", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.PRISS_COBBLESTONE_WALL.get(),
+				new Item.Properties()
+		));
+
+		// ########################
+
+		MOSSY_PRISS_COBBLESTONE_SLAB = REGISTRY.register("mossy_priss_cobblestone_slab", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_SLAB.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_COBBLESTONE_STAIR = REGISTRY.register("mossy_priss_cobblestone_stair", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_STAIR.get(),
+				new Item.Properties()
+		));
+		MOSSY_PRISS_COBBLESTONE_WALL = REGISTRY.register("mossy_priss_cobblestone_wall", () -> new BlockItem(
+				LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE_WALL.get(),
 				new Item.Properties()
 		));
 	}

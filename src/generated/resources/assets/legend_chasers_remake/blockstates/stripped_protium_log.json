@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "legend_chasers_remake:block/stripped_protium_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "legend_chasers_remake:block/stripped_protium_log"
+    },
+    "axis=z": {
+      "model": "legend_chasers_remake:block/stripped_protium_log",
+      "x": 90
+    }
+  }
+}

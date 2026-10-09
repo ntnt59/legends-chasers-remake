@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "legend_chasers_remake:block/mossy_priss_brick",
+    "side": "legend_chasers_remake:block/mossy_priss_brick",
+    "top": "legend_chasers_remake:block/mossy_priss_brick"
+  }
+}

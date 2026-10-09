@@ -7,7 +7,6 @@ import net.tototuto.legendchasersremake.init.LegendChasersRemakeModTabs;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.TickTask;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -33,6 +32,7 @@ import java.util.function.Supplier;
 
 import it.unimi.dsi.fastutil.ints.IntObjectImmutablePair;
 import it.unimi.dsi.fastutil.ints.IntObjectPair;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(LegendChasersRemakeMod.MODID)
 public class LegendChasersRemakeMod {
@@ -43,11 +43,30 @@ public class LegendChasersRemakeMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = context.getModEventBus();
 
-		// Enregistrement des éléments
-		LegendChasersRemakeModItems.REGISTRY.register(bus);
-		LegendChasersRemakeModTabs.REGISTRY.register(bus);
+		// 1. D'abord les blocs (car les items et onglets en ont besoin)
 		LegendChasersRemakeModBlocks.BLOCKS.register(bus);
+
+		// 2. Ensuite les items
+		LegendChasersRemakeModItems.REGISTRY.register(bus);
+
+		// 3. Ensuite les onglets créatifs
+		LegendChasersRemakeModTabs.REGISTRY.register(bus);
+
+		// 4. Enfin les features
 		LCRFeatures.FEATURES.register(bus);
+
+		bus.addListener(this::commonSetup);
+	}
+
+	private void commonSetup(FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
+			net.minecraft.world.level.block.FlowerPotBlock flowerPot =
+					(net.minecraft.world.level.block.FlowerPotBlock) net.minecraft.world.level.block.Blocks.FLOWER_POT;
+
+			flowerPot.addPlant(ResourceLocation.fromNamespaceAndPath(MODID, "paraphyte"), LegendChasersRemakeModBlocks.POTTED_PARAPHYTE);
+			flowerPot.addPlant(ResourceLocation.fromNamespaceAndPath(MODID, "florophyte"), LegendChasersRemakeModBlocks.POTTED_FLOROPHYTE);
+			flowerPot.addPlant(ResourceLocation.fromNamespaceAndPath(MODID, "bubblephyte"), LegendChasersRemakeModBlocks.POTTED_BUBBLEPHYTE);
+		});
 	}
 
 	// --- Réseaux & Tâches ---
@@ -65,8 +84,11 @@ public class LegendChasersRemakeMod {
 		messageID++;
 	}
 
+	// Structure simple pour stocker une tâche planifiée avec son tick d'exécution
+	public record ScheduledTask(int executionTick, Runnable action) {}
+
 	private static final Queue<IntObjectPair<Runnable>> workToBeScheduled = new ConcurrentLinkedQueue<>();
-	private static final PriorityQueue<TickTask> workQueue = new PriorityQueue<>(Comparator.comparingInt(TickTask::getTick));
+	private static final PriorityQueue<ScheduledTask> workQueue = new PriorityQueue<>(Comparator.comparingInt(ScheduledTask::executionTick));
 
 	public static void queueServerWork(int delay, Runnable action) {
 		if (Thread.currentThread().getThreadGroup() == SidedThreadGroups.SERVER)
@@ -79,10 +101,10 @@ public class LegendChasersRemakeMod {
 			int currentTick = event.getServer().getTickCount();
 			IntObjectPair<Runnable> work;
 			while ((work = workToBeScheduled.poll()) != null) {
-				workQueue.add(new TickTask(currentTick + work.leftInt(), work.right()));
+				workQueue.add(new ScheduledTask(currentTick + work.leftInt(), work.right()));
 			}
-			while (!workQueue.isEmpty() && currentTick >= workQueue.peek().getTick()) {
-				workQueue.poll().run();
+			while (!workQueue.isEmpty() && currentTick >= workQueue.peek().executionTick()) {
+				workQueue.poll().action().run();
 			}
 		}
 	}

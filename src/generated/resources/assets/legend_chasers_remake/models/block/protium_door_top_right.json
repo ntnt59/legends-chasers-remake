@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "legend_chasers_remake:block/protium_door_bottom",
+    "top": "legend_chasers_remake:block/protium_door_top"
+  }
+}

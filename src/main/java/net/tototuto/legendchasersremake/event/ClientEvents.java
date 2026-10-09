@@ -15,8 +15,9 @@ public class ClientEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            // Définis ici le rendu Cutout pour tes feuilles
             ItemBlockRenderTypes.setRenderLayer(LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get(), RenderType.cutoutMipped());
+            ItemBlockRenderTypes.setRenderLayer(LegendChasersRemakeModBlocks.PROTIUM_DOOR.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(LegendChasersRemakeModBlocks.PROTIUM_TRAPDOOR.get(), RenderType.cutout());
         });
     }
 }

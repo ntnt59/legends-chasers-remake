@@ -16,121 +16,48 @@ import java.util.List;
 
 public class ModPlacedFeatures {
 
-    public static final ResourceKey<PlacedFeature> PROTIUM_SPRUCE_PLACED = registerKey("protium_spruce");
     public static final ResourceKey<PlacedFeature> GRAPHITE_ORE_PLACED = registerKey("graphite_ore");
-    public static final ResourceKey<PlacedFeature> BLUE_PRISS_GRASS_PLACED_KEY = registerKey("blue_priss_grass_placed");
-    public static final ResourceKey<PlacedFeature> GREEN_PRISS_GRASS_PLACED_KEY = registerKey("green_priss_grass_placed");
-    public static final ResourceKey<PlacedFeature> PURPLE_PRISS_GRASS_PLACED_KEY = registerKey("purple_priss_grass_placed");
-    public static final ResourceKey<PlacedFeature> PINK_PRISS_GRASS_PLACED_KEY = registerKey("pink_priss_grass_placed");
+    public static final ResourceKey<PlacedFeature> PRISS_GRASS_PATCH_PLACED = registerKey("priss_grass_patch_placed");
+
+    // Clé de placement pour les patchs mélangés de hautes herbes
+    public static final ResourceKey<PlacedFeature> MIXED_TALL_PRISS_GRASS_PATCH_PLACED = registerKey("mixed_tall_priss_grass_patch_placed");
+
     public static final ResourceKey<PlacedFeature> PARAPHYTE_KEY = registerKey("paraphyte_placed");
     public static final ResourceKey<PlacedFeature> FLOROPHYTE_KEY = registerKey("florophyte_placed");
     public static final ResourceKey<PlacedFeature> BUBBLEPHYTE_KEY = registerKey("bubblephyte_placed");
-    public static final ResourceKey<PlacedFeature> PRISS_GRASS_PATCH_PLACED_KEY = registerKey("tall_priss_grass_placed");
+    public static final ResourceKey<PlacedFeature> PROTIUM_SPRUCE_PLACED = registerKey("protium_spruce");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        // 1. Minerai de Graphite
         context.register(GRAPHITE_ORE_PLACED, new PlacedFeature(
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.GRAPHITE_ORE_CONFIGURED),
-                List.of(
-                        CountPlacement.of(15),
-                        InSquarePlacement.spread(),
-                        HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(100)),
-                        BiomeFilter.biome()
-                )
+                List.of(CountPlacement.of(15), InSquarePlacement.spread(), HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(100)), BiomeFilter.biome())
         ));
 
-        // 2. Herbe (Priss Grass)
-        context.register(PRISS_GRASS_PATCH_PLACED_KEY, new PlacedFeature(
+        // Herbier au sol
+        context.register(PRISS_GRASS_PATCH_PLACED, new PlacedFeature(
                 configuredFeatures.getOrThrow(ModConfiguredFeatures.PRISS_GRASS_PATCH_KEY),
+                List.of(CountPlacement.of(UniformInt.of(8, 12)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())
+        ));
+
+        // Placement STRICTEMENT EN PATCHS des hautes herbes (5 à 8 patchs par chunk)
+        context.register(MIXED_TALL_PRISS_GRASS_PATCH_PLACED, new PlacedFeature(
+                configuredFeatures.getOrThrow(ModConfiguredFeatures.MIXED_TALL_PRISS_GRASS_PATCH_KEY),
                 List.of(
-                        CountPlacement.of(UniformInt.of(5, 8)), // 5 à 8 patchs par chunk pour un sol bien fourni
+                        // 1 à 2 patchs grand maximum par chunk (au lieu de 5-8)
+                        CountPlacement.of(UniformInt.of(1, 2)),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
                 )
         ));
 
-        context.register(BLUE_PRISS_GRASS_PLACED_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.BLUE_PRISS_GRASS_KEY),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(1),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        CountPlacement.of(UniformInt.of(2, 4)),
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(PURPLE_PRISS_GRASS_PLACED_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.PURPLE_PRISS_GRASS_KEY),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(1),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        CountPlacement.of(UniformInt.of(1, 3)),
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(PINK_PRISS_GRASS_PLACED_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.PINK_PRISS_GRASS_KEY),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(1),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        CountPlacement.of(UniformInt.of(1, 2)),
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(GREEN_PRISS_GRASS_PLACED_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.GREEN_PRISS_GRASS_KEY),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(1),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        CountPlacement.of(UniformInt.of(2, 4)),
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(PARAPHYTE_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.PARAPHYTE_KEY),
-                List.of(
-                        CountPlacement.of(UniformInt.of(1, 2)),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(FLOROPHYTE_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.FLOROPHYTE_KEY),
-                List.of(
-                        CountPlacement.of(UniformInt.of(1, 2)),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
-                )
-        ));
-        context.register(BUBBLEPHYTE_KEY, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.BUBBLEPHYTE_KEY),
-                List.of(
-                        CountPlacement.of(UniformInt.of(1, 2)),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
-                )
-        ));
-
-        // 3. Arbres
-        context.register(PROTIUM_SPRUCE_PLACED, new PlacedFeature(
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.PROTIUM_SPRUCE_KEY),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(6),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        SurfaceWaterDepthFilter.forMaxDepth(0),
-                        BiomeFilter.biome()
-                )
-        ));
+        // Autres éléments
+        context.register(PARAPHYTE_KEY, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.PARAPHYTE_KEY), List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+        context.register(FLOROPHYTE_KEY, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.FLOROPHYTE_KEY), List.of(RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+        context.register(BUBBLEPHYTE_KEY, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.BUBBLEPHYTE_KEY), List.of(RarityFilter.onAverageOnceEvery(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+        context.register(PROTIUM_SPRUCE_PLACED, new PlacedFeature(configuredFeatures.getOrThrow(ModConfiguredFeatures.PROTIUM_SPRUCE_KEY), List.of(RarityFilter.onAverageOnceEvery(6), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, SurfaceWaterDepthFilter.forMaxDepth(0), BiomeFilter.biome())));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

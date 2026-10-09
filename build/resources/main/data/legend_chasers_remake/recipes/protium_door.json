@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " aa",
+    " aa",
+    " aa"
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:protium_planks"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:protium_door",
+    "count": 3
+  }
+}

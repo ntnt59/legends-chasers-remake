@@ -23,7 +23,7 @@ public class LCRBiomeBuilder {
         BiomeSpecialEffects effects = new BiomeSpecialEffects.Builder()
                 .fogColor(0x8FA29C)       // Couleur du brouillard
                 .skyColor(0x18A4D9)       // Couleur du ciel
-                .waterColor(-14329397)     // Couleur de l'eau
+                .waterColor(0x19A4D9)     // Couleur de l'eau
                 .waterFogColor(-14329397)  // Brouillard sous l'eau
                 .grassColorOverride(-2875) // Herbe
                 .foliageColorOverride(-13261698)

@@ -2,6 +2,7 @@ package net.tototuto.legendchasersremake.init;
 
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -10,6 +11,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tototuto.legendchasersremake.block.*;
+
+import java.util.function.Supplier;
 
 public class LegendChasersRemakeModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
@@ -49,6 +52,8 @@ public class LegendChasersRemakeModBlocks {
                             .requiresCorrectToolForDrops()
 
             ));
+
+    // PRISS STONE #########################################################
     public static final RegistryObject<Block> PRISS_STONE =
             BLOCKS.register("priss_stone", () -> new Block(
                     BlockBehaviour.Properties.of()
@@ -58,8 +63,186 @@ public class LegendChasersRemakeModBlocks {
                             .requiresCorrectToolForDrops()
 
             ));
+    public static final RegistryObject<Block> PRISS_STONE_SLAB =
+            BLOCKS.register("priss_stone_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> PRISS_STONE_STAIR =
+            BLOCKS.register("priss_stone_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.PRISS_STONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> PRISS_STONE_PRESSURE_PLATE =
+            BLOCKS.register("priss_stone_pressure_plate", () -> new PressurePlateBlock(
+                    PressurePlateBlock.Sensitivity.EVERYTHING,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops(),
+                    LCRBlockSetType.PRISS_STONE
+            ));
+    public static final RegistryObject<Block> PRISS_STONE_BUTTON =
+            BLOCKS.register("priss_stone_button", () -> new ButtonBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops(),
+                    LCRBlockSetType.PRISS_STONE,
+                    30,
+                    false
+            ));
+    // #####################################################################
+    
+    public static final RegistryObject<Block> PRISS_BRICK =
+            BLOCKS.register("priss_brick", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+    
+            ));
+    public static final RegistryObject<Block> PRISS_BRICK_SLAB =
+            BLOCKS.register("priss_brick_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+    
+            ));
+    public static final RegistryObject<Block> PRISS_BRICK_STAIR =
+            BLOCKS.register("priss_brick_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.PRISS_BRICK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+    
+            ));
+    public static final RegistryObject<Block> PRISS_BRICK_WALL =
+            BLOCKS.register("priss_brick_wall", () -> new WallBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            ));
+    // #####################################################################
+
+    public static final RegistryObject<Block> PRISS_COBBLESTONE_SLAB =
+            BLOCKS.register("priss_cobblestone_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> PRISS_COBBLESTONE_STAIR =
+            BLOCKS.register("priss_cobblestone_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.PRISS_COBBLESTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> PRISS_COBBLESTONE_WALL =
+            BLOCKS.register("priss_cobblestone_wall", () -> new WallBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            ));
+
+    // #####################################################################
+
+    public static final RegistryObject<Block> MOSSY_PRISS_COBBLESTONE_SLAB =
+            BLOCKS.register("mossy_priss_cobblestone_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> MOSSY_PRISS_COBBLESTONE_STAIR =
+            BLOCKS.register("mossy_priss_cobblestone_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.MOSSY_PRISS_COBBLESTONE.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> MOSSY_PRISS_COBBLESTONE_WALL =
+            BLOCKS.register("mossy_priss_cobblestone_wall", () -> new WallBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            ));
+
+    // #####################################################################
+
+    public static final RegistryObject<Block> MOSSY_PRISS_BRICK_SLAB =
+            BLOCKS.register("mossy_priss_brick_slab", () -> new SlabBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> MOSSY_PRISS_BRICK_STAIR =
+            BLOCKS.register("mossy_priss_brick_stair", () -> new StairBlock(
+                    () -> LegendChasersRemakeModBlocks.PRISS_BRICK.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> MOSSY_PRISS_BRICK_WALL =
+            BLOCKS.register("mossy_priss_brick_wall", () -> new WallBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            ));
+    
+    // #####################################################################
     public static final RegistryObject<Block> PRISS_COBBLESTONE =
             BLOCKS.register("priss_cobblestone", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.STONE)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+
+            ));
+    public static final RegistryObject<Block> MOSSY_PRISS_COBBLESTONE =
+            BLOCKS.register("mossy_priss_cobblestone", () -> new Block(
                     BlockBehaviour.Properties.of()
                             .mapColor(MapColor.STONE)
                             .strength(1.5f, 6.0f)
@@ -225,6 +408,13 @@ public class LegendChasersRemakeModBlocks {
                     .sound(SoundType.WOOD)
             )
     );
+    public static final RegistryObject<Block> STRIPPED_PROTIUM_LOG = BLOCKS.register("stripped_protium_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.WOOD)
+                    .strength(2.0F)
+                    .sound(SoundType.WOOD)
+            )
+    );
     public static final RegistryObject<Block> PROTIUM_FENCE = BLOCKS.register("protium_fence",
             () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
 
@@ -266,4 +456,56 @@ public class LegendChasersRemakeModBlocks {
                             .ignitedByLava(),
                     WoodType.OAK
             ));
+    public static final RegistryObject<Block> MOSSY_PRISS_BRICK =
+            BLOCKS.register("mossy_priss_brick", () -> new Block(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_CYAN)
+                            .strength(1.5f, 6.0f)
+                            .sound(SoundType.STONE)
+                            .requiresCorrectToolForDrops()
+            ));
+    public static final RegistryObject<Block> PROTIUM_DOOR = BLOCKS.register("protium_door",
+            () -> new CustomLCRDoorBlock(
+                    BlockBehaviour.Properties.of()
+                            .strength(1.5f, 6.0f)
+                            .noOcclusion(),
+                    BlockSetType.OAK
+            ));
+    public static final RegistryObject<Block> PROTIUM_TRAPDOOR = BLOCKS.register("protium_trapdoor",
+            () -> new TrapDoorBlock(
+                    BlockBehaviour.Properties.of()
+                            .strength(1.5f, 6.0f)
+                            .noOcclusion()
+                            .isValidSpawn((state, level, pos, entityType) -> false),
+                    BlockSetType.OAK
+            ));
+    public static final RegistryObject<Block> ABYSSAL_CORAL_BLOCK = BLOCKS.register("abyssal_coral_block",
+            () -> new GlowingCoralBlock(
+                    BlockBehaviour.Properties.of()
+                            .strength(1.5f)
+                            .sound(SoundType.CORAL_BLOCK)
+                            .lightLevel(state -> state.getValue(GlowingCoralBlock.AMBIENT_LIGHT))
+            ));
+
+    public static final RegistryObject<Block> POTTED_PARAPHYTE = BLOCKS.register("potted_paraphyte",
+            () -> new FlowerPotBlock(
+                    LegendChasersRemakeModBlocks.PARAPHYTE.get(),
+                    BlockBehaviour.Properties.of().noOcclusion().instabreak()
+            ));
+
+    public static final RegistryObject<Block> POTTED_FLOROPHYTE = BLOCKS.register("potted_florophyte",
+            () -> new FlowerPotBlock(
+                    LegendChasersRemakeModBlocks.FLOROPHYTE.get(),
+                    BlockBehaviour.Properties.of().noOcclusion().instabreak()
+            ));
+
+    public static final RegistryObject<Block> POTTED_BUBBLEPHYTE = BLOCKS.register("potted_bubblephyte",
+            () -> new FlowerPotBlock(
+                    LegendChasersRemakeModBlocks.BUBBLEPHYTE.get(),
+                    BlockBehaviour.Properties.of().noOcclusion().instabreak()
+            ));
+
+    public static RegistryObject<Block> registerBlock(String name, Supplier<? extends Block> blockSupplier) {
+        return BLOCKS.register(name, blockSupplier);
+    }
 }

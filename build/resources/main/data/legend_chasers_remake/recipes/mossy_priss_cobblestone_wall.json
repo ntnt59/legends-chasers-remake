@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:mossy_priss_cobblestone"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:mossy_priss_cobblestone_wall",
+    "count": 6
+  }
+}

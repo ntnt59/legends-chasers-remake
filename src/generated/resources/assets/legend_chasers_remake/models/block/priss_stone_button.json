@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "legend_chasers_remake:block/priss_stone"
+  }
+}

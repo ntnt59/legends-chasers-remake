@@ -8,13 +8,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
-import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
@@ -22,8 +18,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguratio
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
@@ -39,25 +33,24 @@ import java.util.List;
 public class ModConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> GRAPHITE_ORE_CONFIGURED = registerKey("graphite_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_PRISS_GRASS_KEY = registerKey("blue_priss_grass");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GREEN_PRISS_GRASS_KEY = registerKey("green_priss_grass");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_PRISS_GRASS_KEY = registerKey("purple_priss_grass");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_PRISS_GRASS_KEY = registerKey("pink_priss_grass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PRISS_GRASS_PATCH_KEY = registerKey("priss_grass_patch");
+
+    // Patch unique de HAUTES HERBES MÉLANGÉES
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MIXED_TALL_PRISS_GRASS_PATCH_KEY = registerKey("mixed_tall_priss_grass_patch");
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> PARAPHYTE_KEY = registerKey("paraphyte");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOROPHYTE_KEY = registerKey("florophyte");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BUBBLEPHYTE_KEY = registerKey("bubblephyte");
     public static final ResourceKey<ConfiguredFeature<?, ?>> PROTIUM_SPRUCE_KEY = registerKey("protium_spruce");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PRISS_GRASS_PATCH_KEY = registerKey("priss_grass_patch_key");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        // 1. Minerai de Graphite
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         List<OreConfiguration.TargetBlockState> graphiteOres = List.of(
                 OreConfiguration.target(stoneReplaceables, LegendChasersRemakeModBlocks.GRAPHITE_ORE.get().defaultBlockState())
         );
         context.register(GRAPHITE_ORE_CONFIGURED, new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(graphiteOres, 9)));
 
-        // 2. Herbes (Priss Grass)
+        // 1. Patchs d'herbes courtes (Fond de prairie)
         context.register(PRISS_GRASS_PATCH_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
                 FeatureUtils.simplePatchConfiguration(
@@ -65,113 +58,60 @@ public class ModConfiguredFeatures {
                         new SimpleBlockConfiguration(
                                 new WeightedStateProvider(
                                         SimpleWeightedRandomList.<BlockState>builder()
-                                                .add(LegendChasersRemakeModBlocks.PRISS_GRASS.get().defaultBlockState(), 16)
-                                                .add(LegendChasersRemakeModBlocks.TALL_PRISS_GRASS.get().defaultBlockState(), 1)
-                                                .add(LegendChasersRemakeModBlocks.TALL_RAINBOW_PRISS_GRASS.get().defaultBlockState(), 1)
+                                                .add(LegendChasersRemakeModBlocks.PRISS_GRASS.get().defaultBlockState(), 25)
+                                                .add(LegendChasersRemakeModBlocks.BLUE_PRISS_GRASS.get().defaultBlockState(), 5)
+                                                .add(LegendChasersRemakeModBlocks.GREEN_PRISS_GRASS.get().defaultBlockState(), 5)
+                                                .add(LegendChasersRemakeModBlocks.PURPLE_PRISS_GRASS.get().defaultBlockState(), 4)
+                                                .add(LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.get().defaultBlockState(), 4)
                                 )
                         ),
-                        List.of(), // Utilise la survie naturelle (mayPlaceOn / wouldSurvive)
-                        64         // 64 essais par patch
+                        List.of(),
+                        96
                 )
         ));
 
-        context.register(BLUE_PRISS_GRASS_KEY, new ConfiguredFeature<>(
+        // 2. PATCH STRICT & MÉLANGÉ DE HAUTES HERBES (Suivant la critique d'Antoine)
+        // Note: Utilise LCRFeatures.DOUBLE_PLANT.get() si ce sont des blocs 2-cases, ou Feature.SIMPLE_BLOCK si 1-case.
+        context.register(MIXED_TALL_PRISS_GRASS_PATCH_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        64,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.BLUE_PRISS_GRASS.get()))
-                        )
+                FeatureUtils.simplePatchConfiguration(
+                        Feature.SIMPLE_BLOCK, // ou ta feature de pose
+                        new SimpleBlockConfiguration(
+                                new WeightedStateProvider(
+                                        SimpleWeightedRandomList.<BlockState>builder()
+                                                .add(LegendChasersRemakeModBlocks.TALL_PRISS_GRASS.get().defaultBlockState(), 80)
+                                                .add(LegendChasersRemakeModBlocks.TALL_RAINBOW_PRISS_GRASS.get().defaultBlockState(), 20)
+                                )
+                        ),
+                        List.of(),
+                        24
                 )
         ));
 
-        context.register(GREEN_PRISS_GRASS_KEY, new ConfiguredFeature<>(
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        64,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.GREEN_PRISS_GRASS.get()))
-                        )
-                )
-        ));
-
-        context.register(PURPLE_PRISS_GRASS_KEY, new ConfiguredFeature<>(
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        64,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.PURPLE_PRISS_GRASS.get()))
-                        )
-                )
-        ));
-
-        context.register(PINK_PRISS_GRASS_KEY, new ConfiguredFeature<>(
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        64,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.PINK_PRISS_GRASS.get()))
-                        )
-                )
-        ));
+        // Plantes rares (-phytes)
         context.register(PARAPHYTE_KEY, new ConfiguredFeature<>(
                 Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        32,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.PARAPHYTE.get())
-                                )
-                        )
-                )
-        ));
-        context.register(FLOROPHYTE_KEY, new ConfiguredFeature<>(
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        32,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.FLOROPHYTE.get())
-                                )
-                        )
-                )
-        ));
-        context.register(BUBBLEPHYTE_KEY, new ConfiguredFeature<>(
-                Feature.RANDOM_PATCH,
-                FeatureUtils.simpleRandomPatchConfiguration(
-                        32,
-                        PlacementUtils.onlyWhenEmpty(
-                                Feature.SIMPLE_BLOCK,
-                                new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.BUBBLEPHYTE.get())
-                                )
-                        )
-                )
+                FeatureUtils.simpleRandomPatchConfiguration(16, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.PARAPHYTE.get()))))
         ));
 
+        context.register(FLOROPHYTE_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(16, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.FLOROPHYTE.get()))))
+        ));
+
+        context.register(BUBBLEPHYTE_KEY, new ConfiguredFeature<>(
+                Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(16, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(LegendChasersRemakeModBlocks.BUBBLEPHYTE.get()))))
+        ));
+
+        // Arbre
         context.register(PROTIUM_SPRUCE_KEY, new ConfiguredFeature<>(
                 Feature.TREE,
                 new TreeConfiguration.TreeConfigurationBuilder(
-                        // 1. Tronc en Protium Log
                         BlockStateProvider.simple(LegendChasersRemakeModBlocks.PROTIUM_LOG.get()),
-                        // 2. Hauteur du tronc : entre 5 et 7 blocs (base 5, 2 aléatoires)
                         new StraightTrunkPlacer(5, 2, 0),
-                        // 3. Feuilles
-                        BlockStateProvider.simple(
-                                LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get()
-                                        .defaultBlockState()
-                                        .setValue(LeavesBlock.PERSISTENT, true)
-                        ),
-                        // 4. Feuillage type Spruce (Sapin Vanilla)
-                        new SpruceFoliagePlacer(
-                                UniformInt.of(2, 3), // Rayon (largeur du bas du sapin)
-                                UniformInt.of(0, 2), // Offset vertical
-                                UniformInt.of(1, 2)  // Hauteur du sommet
-                        ),
-                        // 5. Contrainte de taille globale
+                        BlockStateProvider.simple(LegendChasersRemakeModBlocks.PROTIUM_LEAVES.get().defaultBlockState().setValue(LeavesBlock.PERSISTENT, true)),
+                        new SpruceFoliagePlacer(UniformInt.of(2, 3), UniformInt.of(0, 2), UniformInt.of(1, 2)),
                         new TwoLayersFeatureSize(2, 0, 2)
                 ).ignoreVines().build()
         ));

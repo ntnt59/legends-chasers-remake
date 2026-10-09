@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:mossy_priss_brick"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:mossy_priss_brick_wall",
+    "count": 6
+  }
+}

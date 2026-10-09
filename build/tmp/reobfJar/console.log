@@ -94,10 +94,10 @@ lib: C:\Users\couts\.gradle\caches\modules-2\files-2.1\org.checkerframework\chec
 lib: C:\Users\couts\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.11.0\c5a0ace696d3f8b1c1d8cc036d8c03cc0cbe6b69\error_prone_annotations-2.11.0.jar
 lib: C:\Users\couts\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.3\ba035118bc8bac37d7eff77700720999acd9986d\j2objc-annotations-1.3.jar
 log: null
-input: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\devlibs\modid-1.0.jar
-output: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\libs\modid-1.0.jar
+input: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\devlibs\legend_chasers_remake-1.0.jar
+output: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\libs\legend_chasers_remake-1.0.jar
 threads: 32
-Names: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\moddev\artifacts\namedToIntermediate.tsrg(reversed: false)
+Names: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\moddev\artifacts\namedToIntermediate.tsrg, C:\Users\couts\Downloads\Legend_Chasers_Remake\build\mixin\mixins.legend_chasers_remake.refmap.json.mappings.tsrg(reversed: false)
 Fix Annotations: false
 Unfinal Parameters: false
 Fix Records: false
@@ -106,27 +106,565 @@ Fix SourceFile: false
 Fix Line Numbers: false
 Strip codesigning signatures: ALL
 Adding Libraries to Inheritance
-Reading Input: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\devlibs\modid-1.0.jar
+Reading Input: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\devlibs\legend_chasers_remake-1.0.jar
 Adding input to inheritance map
 Processing entries
+Conflicting propagated mapping for net/minecraftforge/client/model/generators/ModelProvider/run(Lnet/minecraft/data/CachedOutput;)Ljava/util/concurrent/CompletableFuture; from net/minecraft/data/DataProvider/run(Lnet/minecraft/data/CachedOutput;)Ljava/util/concurrent/CompletableFuture;: run -> m_213708_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/client/renderer/PrissazDimensionEffects/getBrightnessDependentFogColor(Lnet/minecraft/world/phys/Vec3;F)Lnet/minecraft/world/phys/Vec3; from net/minecraft/client/renderer/DimensionSpecialEffects/getBrightnessDependentFogColor(Lnet/minecraft/world/phys/Vec3;F)Lnet/minecraft/world/phys/Vec3;: getBrightnessDependentFogColor -> m_5927_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/client/ClientLCREvents$1/getBrightnessDependentFogColor(Lnet/minecraft/world/phys/Vec3;F)Lnet/minecraft/world/phys/Vec3; from net/minecraft/client/renderer/DimensionSpecialEffects/getBrightnessDependentFogColor(Lnet/minecraft/world/phys/Vec3;F)Lnet/minecraft/world/phys/Vec3;: getBrightnessDependentFogColor -> m_5927_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/client/renderer/PrissazDimensionEffects/isFoggyAt(II)Z from net/minecraft/client/renderer/DimensionSpecialEffects/isFoggyAt(II)Z: isFoggyAt -> m_5781_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/datagen/ModLootTableProvider$Blocks/generate()V from net/minecraft/data/loot/BlockLootSubProvider/generate()V: generate -> m_245660_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/client/ClientLCREvents$1/isFoggyAt(II)Z from net/minecraft/client/renderer/DimensionSpecialEffects/isFoggyAt(II)Z: isFoggyAt -> m_5781_
+Conflicting propagated mapping for net/minecraftforge/client/model/generators/ItemModelProvider/getName()Ljava/lang/String; from net/minecraft/data/DataProvider/getName()Ljava/lang/String;: getName -> m_6055_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/datagen/ModBlockTagProvider/addTags(Lnet/minecraft/core/HolderLookup$Provider;)V from net/minecraft/data/tags/TagsProvider/addTags(Lnet/minecraft/core/HolderLookup$Provider;)V: addTags -> m_6577_
+Conflicting propagated mapping for net/minecraftforge/client/model/generators/BlockStateProvider/run(Lnet/minecraft/data/CachedOutput;)Ljava/util/concurrent/CompletableFuture; from net/minecraft/data/DataProvider/run(Lnet/minecraft/data/CachedOutput;)Ljava/util/concurrent/CompletableFuture;: run -> m_213708_
+Conflicting propagated mapping for net/minecraftforge/client/model/generators/BlockStateProvider/getName()Ljava/lang/String; from net/minecraft/data/DataProvider/getName()Ljava/lang/String;: getName -> m_6055_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/datagen/ModItemTagsProvider/addTags(Lnet/minecraft/core/HolderLookup$Provider;)V from net/minecraft/data/tags/TagsProvider/addTags(Lnet/minecraft/core/HolderLookup$Provider;)V: addTags -> m_6577_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/GlowingCoralBlock/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/onPlace(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Z)V: onPlace -> m_6807_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/GlowingCoralBlock/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState; from net/minecraft/world/level/block/Block/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;: getStateForPlacement -> m_5573_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/GlowingCoralBlock/tick(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V from net/minecraft/world/level/block/state/BlockBehaviour/tick(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V: tick -> m_213897_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/GlowingCoralBlock/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V from net/minecraft/world/level/block/state/BlockBehaviour/neighborChanged(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;Lnet/minecraft/core/BlockPos;Z)V: neighborChanged -> m_6861_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/AbyssalNylium/randomTick(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V from net/minecraft/world/level/block/state/BlockBehaviour/randomTick(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/core/BlockPos;Lnet/minecraft/util/RandomSource;)V: randomTick -> m_213898_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/GlowingCoralBlock/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V from net/minecraft/world/level/block/Block/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V: createBlockStateDefinition -> m_7926_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/BlueMysteriousBricks/use(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult; from net/minecraft/world/level/block/state/BlockBehaviour/use(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/phys/BlockHitResult;)Lnet/minecraft/world/InteractionResult;: use -> m_6227_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/FoundryBlock/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState; from net/minecraft/world/level/block/Block/getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;: getStateForPlacement -> m_5573_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/FoundryBlock/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V from net/minecraft/world/level/block/Block/createBlockStateDefinition(Lnet/minecraft/world/level/block/state/StateDefinition$Builder;)V: createBlockStateDefinition -> m_7926_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/DoublePrissazPlantBlock/mayPlaceOn(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z from net/minecraft/world/level/block/BushBlock/mayPlaceOn(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z: mayPlaceOn -> m_6266_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/DoublePrissazPlantBlock/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getShape -> m_5940_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/PrissazPlantBlock/mayPlaceOn(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z from net/minecraft/world/level/block/BushBlock/mayPlaceOn(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z: mayPlaceOn -> m_6266_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/CustomLCRDoorBlock/playerWillDestroy(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)V from net/minecraft/world/level/block/DoorBlock/playerWillDestroy(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/entity/player/Player;)V: playerWillDestroy -> m_5707_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/block/PrissazPlantBlock/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape; from net/minecraft/world/level/block/state/BlockBehaviour/getShape(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/shapes/CollisionContext;)Lnet/minecraft/world/phys/shapes/VoxelShape;: getShape -> m_5940_
+Conflicting propagated mapping for net/minecraftforge/client/model/generators/BlockModelProvider/getName()Ljava/lang/String; from net/minecraft/data/DataProvider/getName()Ljava/lang/String;: getName -> m_6055_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getUses()I from net/minecraft/world/item/Tier/getUses()I: getUses -> m_6609_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getSpeed()F from net/minecraft/world/item/Tier/getSpeed()F: getSpeed -> m_6624_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient; from net/minecraft/world/item/Tier/getRepairIngredient()Lnet/minecraft/world/item/crafting/Ingredient;: getRepairIngredient -> m_6282_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getEnchantmentValue()I from net/minecraft/world/item/Tier/getEnchantmentValue()I: getEnchantmentValue -> m_6601_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getLevel()I from net/minecraft/world/item/Tier/getLevel()I: getLevel -> m_6604_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem$1/getAttackDamageBonus()F from net/minecraft/world/item/Tier/getAttackDamageBonus()F: getAttackDamageBonus -> m_6631_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/worldgen/feature/DoublePlantFeature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z from net/minecraft/world/level/levelgen/feature/Feature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z: place -> m_142674_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/LightPointerItem/use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder; from net/minecraft/world/item/Item/use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;: use -> m_7203_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/worldgen/feature/GiantCanopyTreeFeature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z from net/minecraft/world/level/levelgen/feature/Feature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z: place -> m_142674_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/worldgen/feature/LCRCoralTreeFeature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z from net/minecraft/world/level/levelgen/feature/Feature/place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z: place -> m_142674_
+Conflicting propagated mapping for net/tototuto/legendchasersremake/item/ElectricSwordItem/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V from net/minecraft/world/item/Item/appendHoverText(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Ljava/util/List;Lnet/minecraft/world/item/TooltipFlag;)V: appendHoverText -> m_7373_
+Conflicting propagated mapping for net/minecraft/world/entity/LivingEntity/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V from net/minecraft/world/entity/player/Player/lambda$addAdditionalSaveData$3(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/nbt/Tag;)V: lambda$addAdditionalSaveData$3 -> m_219754_
 Adding extras
 Sorting
-Writing Output: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\libs\modid-1.0.jar
+Writing Output: C:\Users\couts\Downloads\Legend_Chasers_Remake\build\libs\legend_chasers_remake-1.0.jar
   META-INF/
   META-INF/MANIFEST.MF
+  .cache/
+  .cache/103d9f3f36b01595f1aa5172191e60eff02e6924
+  .cache/242026eedb106c2cef7dc5b6647bd8ca544576d5
+  .cache/59eb3dbb5f86130e09b3c62d89b9525ee01cf52d
+  .cache/70d0405e1bef65a0b9e7b7d4553ea7221bfa8bf2
+  .cache/74006aeb6d006a8d20958d0cc2821328d34ccd95
+  .cache/8b10b8a8212d15f77d2f5b5d80d44bd9797f69d8
   META-INF/jarjar/
   META-INF/jarjar/metadata.json
   META-INF/jarjar/mixinextras-forge-0.5.0.jar
   META-INF/mods.toml
   assets/
   assets/legend_chasers_remake/
+  assets/legend_chasers_remake/blockstates/
+  assets/legend_chasers_remake/blockstates/abyssal_coral_block.json
+  assets/legend_chasers_remake/blockstates/abyssal_nylium_block.json
+  assets/legend_chasers_remake/blockstates/aquamarine_block.json
+  assets/legend_chasers_remake/blockstates/blue_priss_grass.json
+  assets/legend_chasers_remake/blockstates/bubblephyte.json
+  assets/legend_chasers_remake/blockstates/florophyte.json
+  assets/legend_chasers_remake/blockstates/foundry.json
+  assets/legend_chasers_remake/blockstates/foundry_casing.json
+  assets/legend_chasers_remake/blockstates/graphite_ore.json
+  assets/legend_chasers_remake/blockstates/green_priss_grass.json
+  assets/legend_chasers_remake/blockstates/iron_frame.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_brick.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_brick_slab.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_brick_stair.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_brick_wall.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_cobblestone.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_cobblestone_slab.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_cobblestone_stair.json
+  assets/legend_chasers_remake/blockstates/mossy_priss_cobblestone_wall.json
+  assets/legend_chasers_remake/blockstates/paraphyte.json
+  assets/legend_chasers_remake/blockstates/pink_priss_grass.json
+  assets/legend_chasers_remake/blockstates/potted_bubblephyte.json
+  assets/legend_chasers_remake/blockstates/potted_florophyte.json
+  assets/legend_chasers_remake/blockstates/potted_paraphyte.json
+  assets/legend_chasers_remake/blockstates/priss_brick.json
+  assets/legend_chasers_remake/blockstates/priss_brick_slab.json
+  assets/legend_chasers_remake/blockstates/priss_brick_stair.json
+  assets/legend_chasers_remake/blockstates/priss_brick_wall.json
+  assets/legend_chasers_remake/blockstates/priss_cobblestone.json
+  assets/legend_chasers_remake/blockstates/priss_cobblestone_slab.json
+  assets/legend_chasers_remake/blockstates/priss_cobblestone_stair.json
+  assets/legend_chasers_remake/blockstates/priss_cobblestone_wall.json
+  assets/legend_chasers_remake/blockstates/priss_grass.json
+  assets/legend_chasers_remake/blockstates/priss_stone.json
+  assets/legend_chasers_remake/blockstates/priss_stone_button.json
+  assets/legend_chasers_remake/blockstates/priss_stone_pressure_plate.json
+  assets/legend_chasers_remake/blockstates/priss_stone_slab.json
+  assets/legend_chasers_remake/blockstates/priss_stone_stair.json
+  assets/legend_chasers_remake/blockstates/protium_door.json
+  assets/legend_chasers_remake/blockstates/protium_fence.json
+  assets/legend_chasers_remake/blockstates/protium_fence_gate.json
+  assets/legend_chasers_remake/blockstates/protium_leaves.json
+  assets/legend_chasers_remake/blockstates/protium_log.json
+  assets/legend_chasers_remake/blockstates/protium_planks.json
+  assets/legend_chasers_remake/blockstates/protium_slab.json
+  assets/legend_chasers_remake/blockstates/protium_stair.json
+  assets/legend_chasers_remake/blockstates/protium_trapdoor.json
+  assets/legend_chasers_remake/blockstates/purple_priss_grass.json
+  assets/legend_chasers_remake/blockstates/stripped_protium_log.json
+  assets/legend_chasers_remake/blockstates/tall_priss_grass.json
+  assets/legend_chasers_remake/blockstates/tall_rainbow_priss_grass.json
   assets/legend_chasers_remake/lang/
   assets/legend_chasers_remake/lang/en_us.json
+  assets/legend_chasers_remake/lang/es_es.json
+  assets/legend_chasers_remake/lang/fr_fr.json
+  assets/legend_chasers_remake/lang/hi_in.json
+  assets/legend_chasers_remake/lang/zh_cn.json
+  assets/legend_chasers_remake/legends_chasers_remake.png
+  assets/legend_chasers_remake/models/
+  assets/legend_chasers_remake/models/block/
+  assets/legend_chasers_remake/models/block/abyssal_coral_block.json
+  assets/legend_chasers_remake/models/block/abyssal_nylium_block.json
+  assets/legend_chasers_remake/models/block/aquamarine_block.json
+  assets/legend_chasers_remake/models/block/bioluminescent_abyssal_coral_block.json
+  assets/legend_chasers_remake/models/block/blue_priss_grass.json
+  assets/legend_chasers_remake/models/block/bubblephyte.json
+  assets/legend_chasers_remake/models/block/florophyte.json
+  assets/legend_chasers_remake/models/block/foundry.json
+  assets/legend_chasers_remake/models/block/foundry_casing.json
+  assets/legend_chasers_remake/models/block/graphite_ore.json
+  assets/legend_chasers_remake/models/block/green_priss_grass.json
+  assets/legend_chasers_remake/models/block/iron_frame.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_slab.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_slab_top.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_stair.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_stair_inner.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_stair_outer.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_wall.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_wall_post.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_wall_side.json
+  assets/legend_chasers_remake/models/block/mossy_priss_brick_wall_side_tall.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_slab.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_slab_top.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_stair.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_stair_inner.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_stair_outer.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_wall.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_wall_post.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_wall_side.json
+  assets/legend_chasers_remake/models/block/mossy_priss_cobblestone_wall_side_tall.json
+  assets/legend_chasers_remake/models/block/paraphyte.json
+  assets/legend_chasers_remake/models/block/pink_priss_grass.json
+  assets/legend_chasers_remake/models/block/potted_bubblephyte.json
+  assets/legend_chasers_remake/models/block/potted_florophyte.json
+  assets/legend_chasers_remake/models/block/potted_paraphyte.json
+  assets/legend_chasers_remake/models/block/priss_brick.json
+  assets/legend_chasers_remake/models/block/priss_brick_slab.json
+  assets/legend_chasers_remake/models/block/priss_brick_slab_top.json
+  assets/legend_chasers_remake/models/block/priss_brick_stair.json
+  assets/legend_chasers_remake/models/block/priss_brick_stair_inner.json
+  assets/legend_chasers_remake/models/block/priss_brick_stair_outer.json
+  assets/legend_chasers_remake/models/block/priss_brick_wall.json
+  assets/legend_chasers_remake/models/block/priss_brick_wall_post.json
+  assets/legend_chasers_remake/models/block/priss_brick_wall_side.json
+  assets/legend_chasers_remake/models/block/priss_brick_wall_side_tall.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_slab.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_slab_top.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_stair.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_stair_inner.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_stair_outer.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_wall.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_wall_post.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_wall_side.json
+  assets/legend_chasers_remake/models/block/priss_cobblestone_wall_side_tall.json
+  assets/legend_chasers_remake/models/block/priss_grass_a.json
+  assets/legend_chasers_remake/models/block/priss_grass_b.json
+  assets/legend_chasers_remake/models/block/priss_grass_c.json
+  assets/legend_chasers_remake/models/block/priss_stone.json
+  assets/legend_chasers_remake/models/block/priss_stone_button.json
+  assets/legend_chasers_remake/models/block/priss_stone_button_pressed.json
+  assets/legend_chasers_remake/models/block/priss_stone_pressure_plate.json
+  assets/legend_chasers_remake/models/block/priss_stone_pressure_plate_down.json
+  assets/legend_chasers_remake/models/block/priss_stone_slab.json
+  assets/legend_chasers_remake/models/block/priss_stone_slab_top.json
+  assets/legend_chasers_remake/models/block/priss_stone_stair.json
+  assets/legend_chasers_remake/models/block/priss_stone_stair_inner.json
+  assets/legend_chasers_remake/models/block/priss_stone_stair_outer.json
+  assets/legend_chasers_remake/models/block/protium_door_bottom_left.json
+  assets/legend_chasers_remake/models/block/protium_door_bottom_left_open.json
+  assets/legend_chasers_remake/models/block/protium_door_bottom_right.json
+  assets/legend_chasers_remake/models/block/protium_door_bottom_right_open.json
+  assets/legend_chasers_remake/models/block/protium_door_top_left.json
+  assets/legend_chasers_remake/models/block/protium_door_top_left_open.json
+  assets/legend_chasers_remake/models/block/protium_door_top_right.json
+  assets/legend_chasers_remake/models/block/protium_door_top_right_open.json
+  assets/legend_chasers_remake/models/block/protium_fence_gate.json
+  assets/legend_chasers_remake/models/block/protium_fence_gate_open.json
+  assets/legend_chasers_remake/models/block/protium_fence_gate_wall.json
+  assets/legend_chasers_remake/models/block/protium_fence_gate_wall_open.json
+  assets/legend_chasers_remake/models/block/protium_fence_inventory.json
+  assets/legend_chasers_remake/models/block/protium_fence_post.json
+  assets/legend_chasers_remake/models/block/protium_fence_side.json
+  assets/legend_chasers_remake/models/block/protium_leaves.json
+  assets/legend_chasers_remake/models/block/protium_log.json
+  assets/legend_chasers_remake/models/block/protium_planks.json
+  assets/legend_chasers_remake/models/block/protium_slab.json
+  assets/legend_chasers_remake/models/block/protium_slab_top.json
+  assets/legend_chasers_remake/models/block/protium_stair.json
+  assets/legend_chasers_remake/models/block/protium_stair_inner.json
+  assets/legend_chasers_remake/models/block/protium_stair_outer.json
+  assets/legend_chasers_remake/models/block/protium_trapdoor_bottom.json
+  assets/legend_chasers_remake/models/block/protium_trapdoor_open.json
+  assets/legend_chasers_remake/models/block/protium_trapdoor_top.json
+  assets/legend_chasers_remake/models/block/purple_priss_grass.json
+  assets/legend_chasers_remake/models/block/stripped_protium_log.json
+  assets/legend_chasers_remake/models/block/tall_priss_grass_bottom.json
+  assets/legend_chasers_remake/models/block/tall_priss_grass_top.json
+  assets/legend_chasers_remake/models/block/tall_rainbow_priss_grass_bottom.json
+  assets/legend_chasers_remake/models/block/tall_rainbow_priss_grass_top.json
+  assets/legend_chasers_remake/models/item/
+  assets/legend_chasers_remake/models/item/abyssal_coral_block.json
+  assets/legend_chasers_remake/models/item/abyssal_nylium_block.json
+  assets/legend_chasers_remake/models/item/aquamarine.json
+  assets/legend_chasers_remake/models/item/aquamarine_block.json
+  assets/legend_chasers_remake/models/item/blue_priss_grass.json
+  assets/legend_chasers_remake/models/item/bubblephyte.json
+  assets/legend_chasers_remake/models/item/electric_sword.json
+  assets/legend_chasers_remake/models/item/florophyte.json
+  assets/legend_chasers_remake/models/item/foundry.json
+  assets/legend_chasers_remake/models/item/foundry_casing.json
+  assets/legend_chasers_remake/models/item/graphite.json
+  assets/legend_chasers_remake/models/item/graphite_ore.json
+  assets/legend_chasers_remake/models/item/green_priss_grass.json
+  assets/legend_chasers_remake/models/item/iron_frame.json
+  assets/legend_chasers_remake/models/item/light_pointer_item.json
+  assets/legend_chasers_remake/models/item/mossy_priss_brick.json
+  assets/legend_chasers_remake/models/item/mossy_priss_brick_slab.json
+  assets/legend_chasers_remake/models/item/mossy_priss_brick_stair.json
+  assets/legend_chasers_remake/models/item/mossy_priss_brick_wall.json
+  assets/legend_chasers_remake/models/item/mossy_priss_cobblestone.json
+  assets/legend_chasers_remake/models/item/mossy_priss_cobblestone_slab.json
+  assets/legend_chasers_remake/models/item/mossy_priss_cobblestone_stair.json
+  assets/legend_chasers_remake/models/item/mossy_priss_cobblestone_wall.json
+  assets/legend_chasers_remake/models/item/paraphyte.json
+  assets/legend_chasers_remake/models/item/pink_priss_grass.json
+  assets/legend_chasers_remake/models/item/potted_bubblephyte.json
+  assets/legend_chasers_remake/models/item/potted_florophyte.json
+  assets/legend_chasers_remake/models/item/potted_paraphyte.json
+  assets/legend_chasers_remake/models/item/priss_brick.json
+  assets/legend_chasers_remake/models/item/priss_brick_slab.json
+  assets/legend_chasers_remake/models/item/priss_brick_stair.json
+  assets/legend_chasers_remake/models/item/priss_brick_wall.json
+  assets/legend_chasers_remake/models/item/priss_cobblestone.json
+  assets/legend_chasers_remake/models/item/priss_cobblestone_slab.json
+  assets/legend_chasers_remake/models/item/priss_cobblestone_stair.json
+  assets/legend_chasers_remake/models/item/priss_cobblestone_wall.json
+  assets/legend_chasers_remake/models/item/priss_grass.json
+  assets/legend_chasers_remake/models/item/priss_stone.json
+  assets/legend_chasers_remake/models/item/priss_stone_button.json
+  assets/legend_chasers_remake/models/item/priss_stone_pressure_plate.json
+  assets/legend_chasers_remake/models/item/priss_stone_slab.json
+  assets/legend_chasers_remake/models/item/priss_stone_stair.json
+  assets/legend_chasers_remake/models/item/protium_door.json
+  assets/legend_chasers_remake/models/item/protium_fence.json
+  assets/legend_chasers_remake/models/item/protium_fence_gate.json
+  assets/legend_chasers_remake/models/item/protium_leaves.json
+  assets/legend_chasers_remake/models/item/protium_log.json
+  assets/legend_chasers_remake/models/item/protium_planks.json
+  assets/legend_chasers_remake/models/item/protium_slab.json
+  assets/legend_chasers_remake/models/item/protium_stair.json
+  assets/legend_chasers_remake/models/item/protium_trapdoor.json
+  assets/legend_chasers_remake/models/item/purple_priss_grass.json
+  assets/legend_chasers_remake/models/item/stripped_protium_log.json
+  assets/legend_chasers_remake/models/item/tall_priss_grass.json
+  assets/legend_chasers_remake/models/item/tall_rainbow_priss_grass.json
+  assets/legend_chasers_remake/textures/
+  assets/legend_chasers_remake/textures/block/
+  assets/legend_chasers_remake/textures/block/abyssal_coral_block.png
+  assets/legend_chasers_remake/textures/block/abyssal_nylium_block_side.png
+  assets/legend_chasers_remake/textures/block/abyssal_nylium_block_top.png
+  assets/legend_chasers_remake/textures/block/aquamarine_block.png
+  assets/legend_chasers_remake/textures/block/bioluminescent_abyssal_coral_block.png
+  assets/legend_chasers_remake/textures/block/blue_priss_grass.png
+  assets/legend_chasers_remake/textures/block/bubblephyte.png
+  assets/legend_chasers_remake/textures/block/bubblephyte_pottered.png
+  assets/legend_chasers_remake/textures/block/florophyte.png
+  assets/legend_chasers_remake/textures/block/florophyte_pottered.png
+  assets/legend_chasers_remake/textures/block/foundry.png
+  assets/legend_chasers_remake/textures/block/foundry_casing.png
+  assets/legend_chasers_remake/textures/block/graphite_ore.png
+  assets/legend_chasers_remake/textures/block/green_priss_grass.png
+  assets/legend_chasers_remake/textures/block/iron_frame.png
+  assets/legend_chasers_remake/textures/block/mossy_priss_brick.png
+  assets/legend_chasers_remake/textures/block/mossy_priss_cobblestone.png
+  assets/legend_chasers_remake/textures/block/paraphyte.png
+  assets/legend_chasers_remake/textures/block/paraphyte_pottered.png
+  assets/legend_chasers_remake/textures/block/pink_priss_grass.png
+  assets/legend_chasers_remake/textures/block/priss_brick.png
+  assets/legend_chasers_remake/textures/block/priss_cobblestone.png
+  assets/legend_chasers_remake/textures/block/priss_grass_a.png
+  assets/legend_chasers_remake/textures/block/priss_grass_b.png
+  assets/legend_chasers_remake/textures/block/priss_grass_c.png
+  assets/legend_chasers_remake/textures/block/priss_stone.png
+  assets/legend_chasers_remake/textures/block/protium_door_bottom.png
+  assets/legend_chasers_remake/textures/block/protium_door_top.png
+  assets/legend_chasers_remake/textures/block/protium_leaves.png
+  assets/legend_chasers_remake/textures/block/protium_log.png
+  assets/legend_chasers_remake/textures/block/protium_log_top.png
+  assets/legend_chasers_remake/textures/block/protium_planks.png
+  assets/legend_chasers_remake/textures/block/protium_trapdoor.png
+  assets/legend_chasers_remake/textures/block/purple_priss_grass.png
+  assets/legend_chasers_remake/textures/block/stripped_protium_log.png
+  assets/legend_chasers_remake/textures/block/stripped_protium_log_top.png
+  assets/legend_chasers_remake/textures/block/tall_priss_grass_bottom.png
+  assets/legend_chasers_remake/textures/block/tall_priss_grass_top.png
+  assets/legend_chasers_remake/textures/block/tall_rainbow_priss_grass_bottom.png
+  assets/legend_chasers_remake/textures/block/tall_rainbow_priss_grass_top.png
+  assets/legend_chasers_remake/textures/environment/
+  assets/legend_chasers_remake/textures/environment/prissaz_moon.png
+  assets/legend_chasers_remake/textures/environment/prissaz_sun.png
+  assets/legend_chasers_remake/textures/item/
+  assets/legend_chasers_remake/textures/item/aquamarine.png
+  assets/legend_chasers_remake/textures/item/electric_sword.png
+  assets/legend_chasers_remake/textures/item/graphite.png
+  assets/legend_chasers_remake/textures/item/protium_door.png
   data/
-  data/recipes/
-  data/recipes/prismarine_shard_recipe.json
+  data/legend_chasers_remake/
+  data/legend_chasers_remake/advancements/
+  data/legend_chasers_remake/advancements/recipes/
+  data/legend_chasers_remake/advancements/recipes/iron_frame.json
+  data/legend_chasers_remake/biome/
+  data/legend_chasers_remake/biome/mining_desert.json
+  data/legend_chasers_remake/dimension/
+  data/legend_chasers_remake/dimension/mining_dimension.json
+  data/legend_chasers_remake/dimension/prissaz.json
+  data/legend_chasers_remake/dimension_type/
+  data/legend_chasers_remake/dimension_type/mining_dimension.json
+  data/legend_chasers_remake/dimension_type/prissaz_type.json
+  data/legend_chasers_remake/forge/
+  data/legend_chasers_remake/forge/biome_modifier/
+  data/legend_chasers_remake/forge/biome_modifier/add_bubblephyte.json
+  data/legend_chasers_remake/forge/biome_modifier/add_florophyte.json
+  data/legend_chasers_remake/forge/biome_modifier/add_graphite_ore.json
+  data/legend_chasers_remake/forge/biome_modifier/add_mixed_tall_priss_grass_patch.json
+  data/legend_chasers_remake/forge/biome_modifier/add_paraphyte.json
+  data/legend_chasers_remake/forge/biome_modifier/add_priss_grass_patch.json
+  data/legend_chasers_remake/forge/biome_modifier/add_protium_spruce.json
+  data/legend_chasers_remake/loot_tables/
+  data/legend_chasers_remake/loot_tables/blocks/
+  data/legend_chasers_remake/loot_tables/blocks/abyssal_coral_block.json
+  data/legend_chasers_remake/loot_tables/blocks/abyssal_nylium_block.json
+  data/legend_chasers_remake/loot_tables/blocks/aquamarine_block.json
+  data/legend_chasers_remake/loot_tables/blocks/blue_mysterious_bricks.json
+  data/legend_chasers_remake/loot_tables/blocks/blue_priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/bubblephyte.json
+  data/legend_chasers_remake/loot_tables/blocks/florophyte.json
+  data/legend_chasers_remake/loot_tables/blocks/foundry.json
+  data/legend_chasers_remake/loot_tables/blocks/foundry_casing.json
+  data/legend_chasers_remake/loot_tables/blocks/graphite_ore.json
+  data/legend_chasers_remake/loot_tables/blocks/green_priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/iron_frame.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_brick.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_brick_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_brick_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_brick_wall.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_cobblestone.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_cobblestone_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_cobblestone_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/mossy_priss_cobblestone_wall.json
+  data/legend_chasers_remake/loot_tables/blocks/paraphyte.json
+  data/legend_chasers_remake/loot_tables/blocks/pink_priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/potted_bubblephyte.json
+  data/legend_chasers_remake/loot_tables/blocks/potted_florophyte.json
+  data/legend_chasers_remake/loot_tables/blocks/potted_paraphyte.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_brick.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_brick_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_brick_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_brick_wall.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_cobblestone.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_cobblestone_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_cobblestone_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_cobblestone_wall.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_stone.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_stone_button.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_stone_pressure_plate.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_stone_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/priss_stone_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_door.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_fence.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_fence_gate.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_leaves.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_log.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_planks.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_slab.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_stair.json
+  data/legend_chasers_remake/loot_tables/blocks/protium_trapdoor.json
+  data/legend_chasers_remake/loot_tables/blocks/purple_priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/stripped_protium_log.json
+  data/legend_chasers_remake/loot_tables/blocks/tall_priss_grass.json
+  data/legend_chasers_remake/loot_tables/blocks/tall_rainbow_priss_grass.json
+  data/legend_chasers_remake/recipes/
+  data/legend_chasers_remake/recipes/bubblephyte_dye.json
+  data/legend_chasers_remake/recipes/florophyte_dye.json
+  data/legend_chasers_remake/recipes/foundry.json
+  data/legend_chasers_remake/recipes/foundry_frame_recipe.json
+  data/legend_chasers_remake/recipes/iron_frame_recipe.json
+  data/legend_chasers_remake/recipes/mossy_priss_brick.json
+  data/legend_chasers_remake/recipes/mossy_priss_brick_2.json
+  data/legend_chasers_remake/recipes/mossy_priss_brick_slab.json
+  data/legend_chasers_remake/recipes/mossy_priss_brick_stair.json
+  data/legend_chasers_remake/recipes/mossy_priss_brick_wall.json
+  data/legend_chasers_remake/recipes/mossy_priss_cobblestone.json
+  data/legend_chasers_remake/recipes/mossy_priss_cobblestone_2.json
+  data/legend_chasers_remake/recipes/mossy_priss_cobblestone_slab.json
+  data/legend_chasers_remake/recipes/mossy_priss_cobblestone_stair.json
+  data/legend_chasers_remake/recipes/mossy_priss_cobblestone_wall.json
+  data/legend_chasers_remake/recipes/paraphyte_dye.json
+  data/legend_chasers_remake/recipes/prismarine_shard_with_priss_stone.json
+  data/legend_chasers_remake/recipes/priss_brick.json
+  data/legend_chasers_remake/recipes/priss_brick_slab.json
+  data/legend_chasers_remake/recipes/priss_brick_stair.json
+  data/legend_chasers_remake/recipes/priss_brick_wall.json
+  data/legend_chasers_remake/recipes/priss_cobblestone_slab.json
+  data/legend_chasers_remake/recipes/priss_cobblestone_stair.json
+  data/legend_chasers_remake/recipes/priss_cobblestone_wall.json
+  data/legend_chasers_remake/recipes/priss_stone.json
+  data/legend_chasers_remake/recipes/priss_stone_button.json
+  data/legend_chasers_remake/recipes/priss_stone_pressure_plate.json
+  data/legend_chasers_remake/recipes/priss_stone_slab.json
+  data/legend_chasers_remake/recipes/priss_stone_stair.json
+  data/legend_chasers_remake/recipes/protium_door.json
+  data/legend_chasers_remake/recipes/protium_fence.json
+  data/legend_chasers_remake/recipes/protium_fence_gate.json
+  data/legend_chasers_remake/recipes/protium_planks.json
+  data/legend_chasers_remake/recipes/protium_slab.json
+  data/legend_chasers_remake/recipes/protium_stair.json
+  data/legend_chasers_remake/recipes/protium_trapdoor.json
+  data/legend_chasers_remake/tags/
+  data/legend_chasers_remake/tags/blocks/
+  data/legend_chasers_remake/tags/blocks/is_lcr_plantable.json
+  data/legend_chasers_remake/worldgen/
+  data/legend_chasers_remake/worldgen/biome/
+  data/legend_chasers_remake/worldgen/biome/prissaz_plain.json
+  data/legend_chasers_remake/worldgen/configured_feature/
+  data/legend_chasers_remake/worldgen/configured_feature/bubblephyte.json
+  data/legend_chasers_remake/worldgen/configured_feature/florophyte.json
+  data/legend_chasers_remake/worldgen/configured_feature/graphite_ore.json
+  data/legend_chasers_remake/worldgen/configured_feature/mixed_tall_priss_grass_patch.json
+  data/legend_chasers_remake/worldgen/configured_feature/paraphyte.json
+  data/legend_chasers_remake/worldgen/configured_feature/priss_grass_patch.json
+  data/legend_chasers_remake/worldgen/configured_feature/protium_spruce.json
+  data/legend_chasers_remake/worldgen/density_function/
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/caves/
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/caves/entrances.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/caves/spaghetti_2d.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/continents.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/depth.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/erosion.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/ridges.json
+  data/legend_chasers_remake/worldgen/density_function/mining_dimension/sloped_cheese.json
+  data/legend_chasers_remake/worldgen/noise/
+  data/legend_chasers_remake/worldgen/noise/mining_amplified.json
+  data/legend_chasers_remake/worldgen/noise/ore_gap_mining.json
+  data/legend_chasers_remake/worldgen/noise/ore_veininess_mining.json
+  data/legend_chasers_remake/worldgen/noise_settings/
+  data/legend_chasers_remake/worldgen/noise_settings/mining_dimension/
+  data/legend_chasers_remake/worldgen/noise_settings/mining_dimension/mining_dimension.json
+  data/legend_chasers_remake/worldgen/noise_settings/prissaz_noise_settings.json
+  data/legend_chasers_remake/worldgen/placed_feature/
+  data/legend_chasers_remake/worldgen/placed_feature/bubblephyte_placed.json
+  data/legend_chasers_remake/worldgen/placed_feature/florophyte_placed.json
+  data/legend_chasers_remake/worldgen/placed_feature/graphite_ore.json
+  data/legend_chasers_remake/worldgen/placed_feature/mixed_tall_priss_grass_patch_placed.json
+  data/legend_chasers_remake/worldgen/placed_feature/paraphyte_placed.json
+  data/legend_chasers_remake/worldgen/placed_feature/priss_grass_patch_placed.json
+  data/legend_chasers_remake/worldgen/placed_feature/protium_spruce.json
+  data/minecraft/
+  data/minecraft/tags/
+  data/minecraft/tags/blocks/
+  data/minecraft/tags/blocks/fences.json
+  data/minecraft/tags/blocks/mineable/
+  data/minecraft/tags/blocks/mineable/axe.json
+  data/minecraft/tags/blocks/mineable/pickaxe.json
+  data/minecraft/tags/blocks/needs_iron_tool.json
+  data/minecraft/tags/blocks/needs_stone_tool.json
+  data/minecraft/tags/blocks/planks.json
+  data/minecraft/tags/blocks/walls.json
+  data/minecraft/tags/items/
+  data/minecraft/tags/items/planks.json
+  data/minecraft/tags/items/stone_crafting_materials.json
+  data/minecraft/tags/items/stone_tool_materials.json
+  data/minecraft/tags/items/swords.json
+  mixins.legend_chasers_remake.json
+  mixins.legend_chasers_remake.refmap.json
   net/
   net/tototuto/
   net/tototuto/legendchasersremake/
+  net/tototuto/legendchasersremake/LegendChasersRemakeMod$ScheduledTask.class
   net/tototuto/legendchasersremake/LegendChasersRemakeMod.class
+  net/tototuto/legendchasersremake/block/
+  net/tototuto/legendchasersremake/block/AbyssalNylium.class
+  net/tototuto/legendchasersremake/block/BlueMysteriousBricks.class
+  net/tototuto/legendchasersremake/block/CustomLCRDoorBlock.class
+  net/tototuto/legendchasersremake/block/DoublePrissazPlantBlock.class
+  net/tototuto/legendchasersremake/block/FoundryBlock.class
+  net/tototuto/legendchasersremake/block/GlowingCoralBlock.class
+  net/tototuto/legendchasersremake/block/GraphiteOre.class
+  net/tototuto/legendchasersremake/block/PrissazPlantBlock.class
+  net/tototuto/legendchasersremake/client/
+  net/tototuto/legendchasersremake/client/ClientLCREvents$1.class
+  net/tototuto/legendchasersremake/client/ClientLCREvents.class
+  net/tototuto/legendchasersremake/client/renderer/
+  net/tototuto/legendchasersremake/client/renderer/PrissazDimensionEffects.class
+  net/tototuto/legendchasersremake/datagen/
+  net/tototuto/legendchasersremake/datagen/DataGenerators.class
+  net/tototuto/legendchasersremake/datagen/LCRBiomeBuilder.class
+  net/tototuto/legendchasersremake/datagen/ModBiomeModifiers.class
+  net/tototuto/legendchasersremake/datagen/ModBlockStateProvider.class
+  net/tototuto/legendchasersremake/datagen/ModBlockTagProvider.class
+  net/tototuto/legendchasersremake/datagen/ModConfiguredFeatures.class
+  net/tototuto/legendchasersremake/datagen/ModItemModelProvider.class
+  net/tototuto/legendchasersremake/datagen/ModItemTagsProvider.class
+  net/tototuto/legendchasersremake/datagen/ModLootTableProvider$Blocks.class
+  net/tototuto/legendchasersremake/datagen/ModLootTableProvider.class
+  net/tototuto/legendchasersremake/datagen/ModPlacedFeatures.class
+  net/tototuto/legendchasersremake/datagen/ModWorldGenProvider.class
+  net/tototuto/legendchasersremake/event/
+  net/tototuto/legendchasersremake/event/AxeStrippingHandler.class
+  net/tototuto/legendchasersremake/event/ClientEvents.class
+  net/tototuto/legendchasersremake/event/PrissNyliumGrowthHandler.class
+  net/tototuto/legendchasersremake/init/
+  net/tototuto/legendchasersremake/init/LCRBiomes.class
+  net/tototuto/legendchasersremake/init/LCRBlockSetType.class
+  net/tototuto/legendchasersremake/init/LCRBlockTags$Blocks.class
+  net/tototuto/legendchasersremake/init/LCRBlockTags.class
+  net/tototuto/legendchasersremake/init/LCRFeatures.class
+  net/tototuto/legendchasersremake/init/LegendChasersRemakeModBlocks.class
+  net/tototuto/legendchasersremake/init/LegendChasersRemakeModItems.class
+  net/tototuto/legendchasersremake/init/LegendChasersRemakeModTabs.class
+  net/tototuto/legendchasersremake/item/
+  net/tototuto/legendchasersremake/item/ElectricSwordItem$1.class
+  net/tototuto/legendchasersremake/item/ElectricSwordItem.class
+  net/tototuto/legendchasersremake/item/LightPointerItem$BurstSession.class
+  net/tototuto/legendchasersremake/item/LightPointerItem.class
+  net/tototuto/legendchasersremake/mixin/
+  net/tototuto/legendchasersremake/mixin/BaseCoralPlantTypeBlockMixin.class
+  net/tototuto/legendchasersremake/mixin/CoralBlockMixin.class
+  net/tototuto/legendchasersremake/worldgen/
+  net/tototuto/legendchasersremake/worldgen/dimension/
+  net/tototuto/legendchasersremake/worldgen/dimension/LegendsChasersRemakeDimensions.class
+  net/tototuto/legendchasersremake/worldgen/feature/
+  net/tototuto/legendchasersremake/worldgen/feature/DoublePlantFeature.class
+  net/tototuto/legendchasersremake/worldgen/feature/GiantCanopyTreeFeature.class
+  net/tototuto/legendchasersremake/worldgen/feature/LCRCoralTreeFeature.class
+  net/tototuto/legendchasersremake/worldgen/portal/
+  net/tototuto/legendchasersremake/worldgen/portal/LegendsChasersRemakeTeleporter.class
   pack.mcmeta

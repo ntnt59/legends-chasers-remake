@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ab "
+  ],
+  "key": {
+    "a": {
+      "item": "legend_chasers_remake:priss_brick"
+    },
+    "b": {
+      "item": "minecraft:vine"
+    }
+  },
+  "result": {
+    "item": "legend_chasers_remake:mossy_priss_brick",
+    "count": 1
+  }
+}
